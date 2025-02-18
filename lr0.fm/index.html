@@ -373,6 +373,13 @@
               We use the diffusion model PIXART-&alpha; to generate synthetic HR images, via
                 7,000 randomly sampled captions from Conceptual Captions.
             </p>
+            <p>
+                \<strong>CLAIM:</strong> If 7,000 (or fewer) concepts/captions can consistently enhance model performance
+across 15 datasets, it suggests that the model is likely learning the relationship between HR and
+LR features rather than exploiting shortcuts. This is supported by greater improvements at LR
+(16×16) compared to HR (128×128). If the model somehow cheats the zero-shot evaluation using
+diffusion-generated images, we would expect similar or better performance improvements at HRs.
+            </p>
 
           <div class="columns is-centered">
             <div class="column">
@@ -415,8 +422,8 @@
           <div class="content has-text-justified">
             <div class="content">
               <p class="carousel-caption" style="width: 90%; margin-left: auto; margin-right: auto; text-align: center; margin-bottom: -5px">
-                <strong>▷ <b>LR-TK0 improvement on Foundation models:</b> EVA-B/16</strong> is EVA
-                  <strong>Meta-B/16</strong>: MetaCLIP-ViT-B/16 (2.5B), <strong>OC-B/16</strong>: OpenCLIP-ViT-B/16. Higher number &prop; better performance.
+                <strong>▷ <b>LR-TK0 improvement on Foundation models:</b> EVA-B/16</strong> is ‘EVA-02-CLIP-B/16, 
+                  <strong>Meta-B/16</strong>: MetaCLIP-ViT-B/16 (2.5B), <strong>OC-B/16</strong>: OpenCLIP-ViT-B/16. Higher number implies better performance.
               </p>
 
               <iframe src="table.html" width="100%" height="300px" style="border:none;"></iframe>
@@ -426,7 +433,7 @@
             <div class="content">
               <img src="static/images/proposed_base.png" width="100%" height="100%" style="margin-top: -40px;">
               <p class="carousel-caption" style="width: 90%; margin-left: auto; margin-right: auto; text-align: center; margin-bottom: 35px;">
-                Baseline vs LR-TK0: Top-1 accuracy for EVA-CLIP-B/16 on 16×16. 
+                <strong>Baseline vs LR-TK0:</strong> Top-1 accuracy improvement for EVA-CLIP-B/16 on 16×16 for each dataset on zero-classification 
                 <!-- <b><i>Right:</i></b> LR-TK0 improves all EVA backbones: L@336 is L/14 with 336×336 input. -->
               </p>
             </div>
@@ -436,7 +443,7 @@
               <img src="static/images/eva_backbones.png" width="30%" height="30%">
             </div>
               <p class="carousel-caption" style="width: 90%; margin-left: auto; margin-right: auto; text-align: center;">
-                ▷ <b><i>Left:</i></b> #Images/Caption: Robustness vs. Size of diffusion generated dataset. <b><i>Right:</i></b> Baseline vs LR-TK0: Top-1 accuracy for EVA-CLIP-B/16 on 16×16. 
+                <b><i>Left:</i></b> \<strong>#Images/Caption:</strong> Robustness vs. Size of diffusion generated dataset. Robustness can be imporved even with 2K captions instead of 7K captions as used in paper. <b><i>Right:</i></b> Baseline vs LR-TK0: Top-1 accuracy for EVA-CLIP-B/16 on 16×16. 
               </p>
             <!-- </div> -->
 
