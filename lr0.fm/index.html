@@ -268,7 +268,7 @@
 
             <p>
               <b><i>▷ Solution: Improved Relative Robustness:</i> </b>   We
-              propose zeroing out robustness near random predictions. 
+              propose zeroing out robustness near random predictions. &epsilon; measures how far the accuracy of the model is from the random predictions. &epsilon; = A<sub>HQ</sub> - A<sub>random</sub>
               <div style="display: flex; justify-content: center; align-items: center; gap: 100px;">
                 <img src="static/images/improved robustness.jpeg" width="50%" height="50%">
                 <img src="static/images/new_alpha_page-0001.jpg" width="30%" height="30%">
@@ -443,7 +443,7 @@ diffusion-generated images, we would expect similar or better performance improv
               <img src="static/images/eva_backbones.png" width="30%" height="30%">
             </div>
               <p class="carousel-caption" style="width: 90%; margin-left: auto; margin-right: auto; text-align: center;">
-                <b><i>Left:</i></b> \<strong>#Images/Caption:</strong> Robustness vs. Size of diffusion generated dataset. Robustness can be imporved even with 2K captions instead of 7K captions as used in paper. <b><i>Right:</i></b> Baseline vs LR-TK0: Top-1 accuracy for EVA-CLIP-B/16 on 16×16. 
+                <b><i>Left:</i></b> \<strong>#Images/Caption:</strong> Robustness vs. Size of diffusion generated dataset. Robustness can be imporved even with 2K captions instead of 7K captions as used in paper. <b><i>Right:</i></b> <strong> Baseline vs LR-TK0:</strong> Top-1 accuracy for EVA-CLIP-B/16 on 16×16. LR-TK0 not only improves the acuracy of all variants of the EVA but also boost the accuracy when there are more LR tokens.
               </p>
             <!-- </div> -->
 
