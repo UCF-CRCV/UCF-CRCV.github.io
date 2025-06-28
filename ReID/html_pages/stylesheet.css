@@ -170,3 +170,20 @@ span.highlight {
  filter: brightness(0) saturate(100%) invert(17%) sepia(97%) saturate(7481%) hue-rotate(0deg) brightness(101%) contrast(119%);
  transform: scale(1.2); 
 }
+
+
+@media screen and (max-width: 768px) { 
+  table { 
+  display: block; 
+  overflow-x: auto; 
+  white-space: nowrap;
+}
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
