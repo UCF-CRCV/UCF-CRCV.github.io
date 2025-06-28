@@ -76,6 +76,16 @@ a:hover {
 }
 
 
+body {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+html {
+  overflow-x: auto;
+}
+
+
 body,
 td,
 th,
