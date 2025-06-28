@@ -172,7 +172,7 @@ span.highlight {
 }
 
 
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 800px) { 
   table { 
   display: block; 
   overflow-x: auto; 
