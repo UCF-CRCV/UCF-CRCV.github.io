@@ -200,7 +200,7 @@
                   <img src="static/images/SA1.jpg" class="equal-image" />
                 </div>
                 <p class="carousel-caption">
-                  <b>Traditional Self-Attention</b> shares information across all tokens, leaking information across ReID (biometrics) and Color tokens (appearance bias). This is an example of <b>100% overlap</b> between biometrics and appearance bias.
+                  <b>Traditional Self-Attention</b><br> shares information across all tokens, leaking information across ReID (biometrics) and Color tokens (appearance bias). This is an example of <b>100% overlap</b> between biometrics and appearance bias.
               </div>
             </div>
 
@@ -210,7 +210,7 @@
                   <img src="static/images/SA2.jpg" class="equal-image" />
                 </div>
                 <p class="carousel-caption">
-                  <b>Masked Self-Attention</b> doesn't allow information sharing across ReID (biometrics) and Color tokens (appearance bias); however, ReID and Color tokens influence the weight of each other on spatial tokens. This is an example of <b>0% overlap</b> between biometrics and appearance bias, but they influence each other's weight.
+                  <b>Masked Self-Attention</b><br> doesn't allow information sharing across ReID (biometrics) and Color tokens (appearance bias); however, ReID and Color tokens influence the weight of each other on spatial tokens. This is an example of <b>0% overlap</b> between biometrics and appearance bias, but they influence each other's weight.
               </div>
             </div>
 
@@ -220,13 +220,18 @@
                   <img src="static/images/SA3.jpg" class="equal-image" />
                 </div>
                 <p class="carousel-caption">
-                  <b style="color:rgb(255, 0, 0);" >S2A Self-Attention (Ours ☺️)  </b> By doing two-step self-attention, Color tokens (appearance bias) no longer influence the weight of the ReID tokens (biometrics) and vice-versa. This is an example of <b>0% overlap</b> between biometrics and appearance bias. By adjusting the weights of the averaging of the spatial tokens (one aware of biometrics), and the other aware of appearance bias, we can influence which signal gets more weightage (biometrics or appearance bias). Current hyperpater is set to 0.5 equal weight for both.
+                  <b style="color:rgb(255, 0, 0);" >S2A Self-Attention (Ours ☺️)  </b><br> By doing two-step self-attention, Color tokens (appearance bias) no longer influence the weight of the ReID tokens (biometrics) and vice-versa, "exactly like" Masked Self-Attention, and an example of <b>0% overlap</b> between biometrics and appearance bias. By adjusting the weights of the averaging of the spatial tokens; one aware of biometrics, and the other aware of appearance bias, we can influence which signal gets more weightage (biometrics or appearance bias). Current hyperpater is set to equal weight for both (1/2 weight)
               </div>
             </div>
         </div>
         <div class="carousel-caption">
           <h3 class="title is-3"> <b>Alternative 😱</b></h3>
-            Alternative to our S2A self-attention would be to use two transformers, one for ReID and the other for appearance bias, which is computationally impractical for deployment. An alternative to using color would be to use clothing integer annotations instead of colors. However, colors are more expressive than integer clothing labels. Another alternative would be that LLM-based fine-grained clothing description would be computationally infeasible, and needs to be generated per frame on video, as clothing may change across video.
+            
+             ► Alternative to our S2A self-attention would be to use two transformers, one for ReID and the other for appearance bias, which is computationally impractical for deployment, currently deployed by many ReID works as 2 ResNets or 2 transformers: one for biometrics and other for appearence bias (diffusion models for clothes, LLMs for clothes description).  <br>
+             ► Another alternative to S2A self-attention would be to just leak the information between biometrics and appearence bias by sharing the backbone, most famously done by CAL CC-ReID. In Transformers, that would be "Traditional Self-Attention". <br>
+             ► An alternative to using color would be to use "traditional" clothing integer annotations instead of colors. However, colors are more expressive than integer clothing labels.  <br>
+             ► Another alternative would be that LLM-based fine-grained clothing description; computationally infeasible. Fine-grained description needs to be generated per frame on video, as clothing may change across video <br>
+          </ul>
         </div>
       </div>
     </div>
@@ -245,7 +250,7 @@
        <div class="item">
         <!-- Your image here -->
          <div style="display: flex; justify-content: center; align-items: center;">
-          <img src="static/images/generalization.png" width="50%" />
+          <img src="static/images/generalization.png" width="60%" />
         </div>
         <h2 class="subtitle has-text-centered">
           <br><b>Generalization</b> <br>CSCI apporach generalizes across various previous works involving transformers and consistently outperforms traditional integer clothing labels.
@@ -254,7 +259,7 @@
       <div class="item">
         <!-- Your image here -->
         <div style="display: flex; justify-content: center; align-items: center;">
-          <img src="static/images/img_result.png" width="80%" />
+          <img src="static/images/img_result.png" width="100%" />
         </div>
         <h2 class="subtitle has-text-centered">
           <br><b>Image ReID Results</b> <br>CSCI doesn't require any annotation or supervision, unlike previous works. 
@@ -264,7 +269,7 @@
       <div class="item">
         <!-- Your image here -->
         <div style="display: flex; justify-content: center; align-items: center;">
-          <img src="static/images/video_result.png" width="80%" />
+          <img src="static/images/video_result.png" width="100%" />
         </div>
         <h2 class="subtitle has-text-centered">
          <br><b>Video ReID Results</b> <br>CSCI doesn't require any annotation or supervision, unlike previous works. EZ-CLIP singnificantly improves Video ReID performance.
@@ -274,7 +279,7 @@
       <div class="item">
         <!-- Your image here -->
         <div style="display: flex; justify-content: center; align-items: center;">
-          <img src="static/images/self-attention.png" width="40%" />
+          <img src="static/images/self-attention.png" width="100%" />
         </div>
         <h2 class="subtitle has-text-centered">
          <br><b>Self-Attention alternatives</b> <br>S2A self-attention outperforms Masked and traditional self-attention, indicating the strong need for preventing 1) information leak between biometrics signals and appearance bias. 2) Preventing appearance bias influence on the weight of biometrics signals and vice versa. 
@@ -284,7 +289,7 @@
       <div class="item">
         <!-- Your image here -->
         <div style="display: flex; justify-content: center; align-items: center;">
-          <img src="static/images/color_variation.png" width="20%" />
+          <img src="static/images/color_variation.png" width="50%" />
         </div>
         <h2 class="subtitle has-text-centered">
          <br><b>Alternatives to clothes</b><br> Colors outperform tradtional integer clothing annotations and grey colored inputs.
@@ -299,11 +304,11 @@
 
 <!-- Ablation -->
 <section class="section hero">
-  <div class="container">
-    <h2 class="title is-3">Ablation 🥸</h2>
+  <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <div class="columns is-centered">
+        <h2 class="title is-3">Ablation 🥸</h2>
+        <div class="columns is-centered" style="gap: 2rem;">
             <div class="column">
               <div class="content">
                 <div class="image-container2">
@@ -318,22 +323,11 @@
             <div class="column">
               <div class="content">
                 <div class="image-container2">
-                  <!--   -->
                   <img src="static/images/DCSK.png" class="equal-image2" />
                 </div>
                 <p class="carousel-caption">
                   Different clothes but similar K-means cluster of color embeddings indicate the true  <b>limitation</b> of colors. Colors take into account overall frames, which may make models relate different images based on similar clothing foreground and background colors. Solution : horizontal / vertical splits of colors / fine-grained colors?
               </div>
-            </div>
-
-            <!-- <div class="column">
-              <div class="content">
-                <div class="image-container">
-                  <img src="static/images/KMeans.png" class="equal-image" />
-                </div>
-                <p class="carousel-caption">
-                  <b style="color:rgb(255, 0, 0);" >S2A Self-Attention (Ours🥂)  </b> By doing two-step self-attention, Color tokens (appearance bias) no longer influence the weight of the ReID tokens (biometrics) and vice-versa. This is an example of <b>0% overlap</b> between biometrics and appearance bias. By adjusting the weights of the averaging of the spatial tokens (one aware of biometrics), and the other aware of appearance bias, we can influence which signal gets more weightage (biometrics or appearance bias). Current hyperpater is set to 0.5 equal weight for both.
-               </div> -->
             </div>
         </div>
       </div>
