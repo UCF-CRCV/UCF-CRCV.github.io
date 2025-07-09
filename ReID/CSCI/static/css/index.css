@@ -151,9 +151,20 @@ body {
   width: 340px;
 }
 
+.image-container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
 .equal-image {
   height: 250px;
-  /* width: 230px; */
+  object-fit: cover;
+}
+
+.equal-image2 {
+  height: 250px;
   object-fit: cover;
 }
 

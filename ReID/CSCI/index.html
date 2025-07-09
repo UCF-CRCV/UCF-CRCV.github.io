@@ -17,7 +17,7 @@
   <meta name="twitter:title" content="Colors See Colors Ignore: Clothes Changing ReID with Color Disentanglement">
   <meta name="twitter:description" content="Person ReID biometrics survillence ICCV">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/banner.jpg">
+  <meta name="twitter:image" content="static/images/banner.jpeg">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="Person ReID biometrics survillence ICCV">
@@ -25,7 +25,7 @@
 
 
   <title>Colors See Colors Ignore: Clothes Changing ReID with Color Disentanglement</title>
-  <link rel="icon" type="image/x-icon" href="static/images/banner.jpg">
+  <link rel="icon" type="image/x-icon" href="static/images/banner.jpeg">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -62,7 +62,7 @@
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">University of Central Florida<br><b style="color:red;">ICCV 2025</b></span>
+                    <span class="author-block">University of Central Florida<br><b style="color:red;">ICCV 2025 🥳</b></span>
                   </div>
 
                   <div class="column has-text-centered">
@@ -125,12 +125,23 @@
     <div class="hero-body">
 
 
-      <div style="display: flex; justify-content: center; align-items: center;">
-        <img src="static/images/colors_Gif/vid 2.gif" width="80%" height="100%">
-        <img src="static/images/colors_Gif/vid 3.gif" width="80%" height="100%">
-        <img src="static/images/colors_Gif/vid 4.gif" width="80%" height="100%">
-        <img src="static/images/colors_Gif/vid 5.gif" width="80%" height="100%">
-        <img src="static/images/colors_Gif/vid.gif" width="80%" height="100%">
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px;">
+        <img src="static/images/colors_Gif/vid 2.gif" width="11%" >
+        <img src="static/images/colors_Gif/vid 3.gif" width="11%" >
+        <img src="static/images/colors_Gif/vid 4.gif" width="11%" >
+        <img src="static/images/colors_Gif/vid 5.gif" width="11%" >
+        <img src="static/images/colors_Gif/vid.gif" width="11%"  >
+        <img src="static/images/colors_Gif/vid 6.gif" width="11%" >
+        <img src="static/images/colors_Gif/vid 7.gif" width="11%" >
+        <img src="static/images/colors_Gif/vid 8.gif" width="11%" >
+        <img src="static/images/colors_Gif/vid 9.gif" width="11%" >
+        <img src="static/images/colors_Gif/vid 10.gif" width="11%" >
+        <img src="static/images/colors_Gif/vid 11.gif" width="11%" >
+        <img src="static/images/colors_Gif/vid 12.gif" width="11%">
+        <img src="static/images/colors_Gif/vid 13.gif" width="11%">
+        <img src="static/images/colors_Gif/vid 14.gif" width="11%">
+        <img src="static/images/colors_Gif/vid 15.gif" width="11%">
+        <img src="static/images/colors_Gif/vid 16.gif" width="11%">
         </div>
       <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
         <source src="static/videos/banner_video.mp4" type="video/mp4">
@@ -209,7 +220,7 @@
                   <img src="static/images/SA3.jpg" class="equal-image" />
                 </div>
                 <p class="carousel-caption">
-                  <b style="color:rgb(255, 0, 0);" >S2A Self-Attention (Ours🥂)  </b> By doing two-step self-attention, Color tokens (appearance bias) no longer influence the weight of the ReID tokens (biometrics) and vice-versa. This is an example of <b>0% overlap</b> between biometrics and appearance bias. By adjusting the weights of the averaging of the spatial tokens (one aware of biometrics), and the other aware of appearance bias, we can influence which signal gets more weightage (biometrics or appearance bias). Current hyperpater is set to 0.5 equal weight for both.
+                  <b style="color:rgb(255, 0, 0);" >S2A Self-Attention (Ours ☺️)  </b> By doing two-step self-attention, Color tokens (appearance bias) no longer influence the weight of the ReID tokens (biometrics) and vice-versa. This is an example of <b>0% overlap</b> between biometrics and appearance bias. By adjusting the weights of the averaging of the spatial tokens (one aware of biometrics), and the other aware of appearance bias, we can influence which signal gets more weightage (biometrics or appearance bias). Current hyperpater is set to 0.5 equal weight for both.
               </div>
             </div>
         </div>
@@ -286,9 +297,56 @@
 <!-- End image carousel -->
 
 
+<!-- Ablation -->
+<section class="section hero">
+  <div class="container">
+    <h2 class="title is-3">Ablation 🥸</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="columns is-centered">
+            <div class="column">
+              <div class="content">
+                <div class="image-container2">
+                  <img src="static/images/SCDK.png" class="equal-image2" />
+                </div>
+                <p class="carousel-caption">
+                  Same clothes labels but different K means cluster of color embeddings indicates models take into account illumination, and other environmental factors. Depending on how you see it, it can be a <b>limitation</b> as "noisy clothing labels" or color embeddings indicate what's happening in the exact moment, aka <b>"Adaptive"</b>. 
+                </p>
+              </div>
+            </div>
 
+            <div class="column">
+              <div class="content">
+                <div class="image-container2">
+                  <!--   -->
+                  <img src="static/images/DCSK.png" class="equal-image2" />
+                </div>
+                <p class="carousel-caption">
+                  Different clothes but similar K-means cluster of color embeddings indicate the true  <b>limitation</b> of colors. Colors take into account overall frames, which may make models relate different images based on similar clothing foreground and background colors. Solution : horizontal / vertical splits of colors / fine-grained colors?
+              </div>
+            </div>
+
+            <!-- <div class="column">
+              <div class="content">
+                <div class="image-container">
+                  <img src="static/images/KMeans.png" class="equal-image" />
+                </div>
+                <p class="carousel-caption">
+                  <b style="color:rgb(255, 0, 0);" >S2A Self-Attention (Ours🥂)  </b> By doing two-step self-attention, Color tokens (appearance bias) no longer influence the weight of the ReID tokens (biometrics) and vice-versa. This is an example of <b>0% overlap</b> between biometrics and appearance bias. By adjusting the weights of the averaging of the spatial tokens (one aware of biometrics), and the other aware of appearance bias, we can influence which signal gets more weightage (biometrics or appearance bias). Current hyperpater is set to 0.5 equal weight for both.
+               </div> -->
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- -->
+
+
+<hr class="divider" />
+<hr class="divider" />
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
+  <section class="section is-light" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX 🥹</h2>
       <pre><code>BibTex Code Here</code></pre>
