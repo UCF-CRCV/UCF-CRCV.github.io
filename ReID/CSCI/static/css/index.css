@@ -177,14 +177,13 @@ body {
 
 
 
-flashing-text {
-  color: rgb(255, 0, 0);
-  animation: flash 1s infinite;
+.blink {
+    animation: blinker 2s linear infinite;
+    color: red;
+    font-family: sans-serif;
 }
-
-@keyframes flash {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
 }
-
-

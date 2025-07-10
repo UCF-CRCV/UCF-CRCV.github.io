@@ -224,14 +224,28 @@
               </div>
             </div>
         </div>
-        <div class="carousel-caption">
-          <h3 class="title is-3"> <b>Alternative 😱</b></h3>
-            
-             ► Alternative to our S2A self-attention would be to use two transformers, one for ReID and the other for appearance bias, which is computationally impractical for deployment, currently deployed by many ReID works as 2 ResNets or 2 transformers: one for biometrics and other for appearence bias (diffusion models for clothes, LLMs for clothes description).  <br>
-             ► Another alternative to S2A self-attention would be to just leak the information between biometrics and appearence bias by sharing the backbone, most famously done by CAL CC-ReID. In Transformers, that would be "Traditional Self-Attention". <br>
-             ► An alternative to using color would be to use "traditional" clothing integer annotations instead of colors. However, colors are more expressive than integer clothing labels.  <br>
-             ► Another alternative would be that LLM-based fine-grained clothing description; computationally infeasible. Fine-grained description needs to be generated per frame on video, as clothing may change across video <br>
-          </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- -->
+
+
+
+
+<!-- METHOD -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Alternatives 😱</h2>
+        <div class="content has-text-justified">
+          <p>
+            ► Alternative to our S2A self-attention would be to use two transformers, one for ReID and the other for appearance bias, which is computationally impractical for deployment, currently deployed by many ReID works as 2 ResNets or 2 transformers: one for biometrics and other for appearence bias (diffusion models for clothes, LLMs for clothes description). <br>
+            ► Another alternative to S2A self-attention would be to just leak the information between biometrics and appearence bias by sharing the backbone, most famously done by CAL CC-ReID. In Transformers, that would be "Traditional Self-Attention".  <br>
+            ► An alternative to using color would be to use "traditional" clothing integer annotations instead of colors. However, colors are more expressive than integer clothing labels.  <br>
+            ► Another alternative would be that LLM-based fine-grained clothing description; computationally infeasible. Fine-grained description needs to be generated per frame on video, as clothing may change across video <br>
+          </p>
         </div>
       </div>
     </div>
@@ -241,11 +255,12 @@
 
 
 <!-- Image carousel -->
-<section class="hero is-small is-light">
+<section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Results 🧐</h2>
-      Numbers reported are an average of two runs, however <b class="flashing-text" style="color:rgb(255, 0, 0);" >pretrained weights are provided for the best performing models which has much higher accuracy than the reported values</b>.
+      Numbers reported are an average of two runs, however <b class="blink"> pretrained weights are provided for the best performing models which have much higher accuracy than the reported values</b>.
+       
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
@@ -303,7 +318,7 @@
 
 
 <!-- Ablation -->
-<section class="section hero">
+<section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -337,8 +352,7 @@
 <!-- -->
 
 
-<hr class="divider" />
-<hr class="divider" />
+
 
 <!--BibTex citation -->
   <section class="section is-light" id="BibTeX">
@@ -361,7 +375,6 @@
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the<a href="https://nerfies.github.io" target="_blank">Nerfies</a>project page.
           </p>
