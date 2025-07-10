@@ -174,3 +174,17 @@ body {
   text-align: left;
 }
 
+
+
+
+flashing-text {
+  color: rgb(255, 0, 0);
+  animation: flash 1s infinite;
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
