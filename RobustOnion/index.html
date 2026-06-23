@@ -73,7 +73,7 @@
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <span class="author-block"><a href="https://ppriyank.github.io/" target="_blank">Priyank Pathak*</a><sup>1</sup>,</span>
-                <span class="author-block"><a href="https://mukil07.github.io/ " target="_blank">Mukilan Karuppasamy*</a><sup>2</sup>,</span>
+                <span class="author-block"><a href="https://mukil07.github.io/ " target="_blank">Mukilan Karuppasamy*</a><sup>1</sup>,</span>
                 <span class="author-block"><a href="https://www.sochastic.me/" target="_blank">Aaditya Baranwal</a><sup>1</sup>,</span>
                 <span class="author-block"><a href="https://mse.ucf.edu/person/shrutivyas/" target="_blank">Shruti Vyas</a><sup>1</sup>,</span>
                 <span class="author-block"><a href="https://scholar.google.com/citations?user=D_JvEcwAAAAJ&hl=en" target="_blank">Yogesh S Rawat</a><sup>1</sup></span>
@@ -81,8 +81,7 @@
             </div>
                   
                   <div class="is-size-5 publication-authors">                
-                    <span class="author-block"><sup>1</sup>University of Central Florida,</span>
-                    <span class="author-block"><sup>2</sup>NIT Trichy,</span>
+                    <span class="author-block"><sup>1</sup>University of Central Florida</span>
                     <br>
                     <span class="author-block"><sup>*</sup><i>Equal Contribution</i></span>
                     <br>
@@ -256,13 +255,12 @@
         <h2 class="title is-3">Abstract 📖</h2>
         <div class="content has-text-justified">
           <p>
-            The impact of real-world noise on <em>Open Vocabulary Object Detectors (OV-ODs)</em> is constrained by their architectural complexity and the scarcity of noise-annotated datasets. 
-            Our empirical analysis, <u><b>Robust Onion</b></u>, uses controlled synthetic visual degradations to mirror feature collapse of real-world noises and systematically peel apart <b>(open the black box)</b> OV-OD components to assess their robustness. 
-            Our findings include: 
-            i) Similar vision backbones show comparable robustness, driven by identical feature collapse at similar layers. 
-            ii) Pretraining, architectural nuances, and captions contribute little to robustness. 
-            iii) Robustness relies strongly on the image domain rather than on annotations, explaining the similar impact of COCO and LVIS on robustness (same images, different annotations), and iv) how datasets like ODinW-13, with large, isolated objects, can give a misleading impression of high robustness. 
-            These insights point to potential research on cross-layer feature exchange and continual learning strategies to improve robustness efficiently. Our findings highlight critical directions for designing robust OV-ODs under challenging visual degradations.
+            The impact of real-world noise on Open Vocabulary Object Detectors (OV-ODs) remains poorly understood due to their architectural complexity.
+            We present our comprehensive analysis Robust Onion, an empirical study that uses controlled
+            synthetic visual degradations to peel OV-ODs layer-by-layer, revealing how, why, and where robustness degrades, systematically analyzing feature collapse.
+            Our findings reveal that models with similar vision backbones exhibit comparable robustness, driven by similar feature collapse at similar layers, while factors such as pretraining strategy, architectural nuances, and caption supervision contribute little. Robustness is primarily governed by the image domain rather than annotations, explaining the similar robustness impact on COCO and LVIS, and why datasets like ODinW-13 can give an impression of inflated robustness due to large, isolated objects.
+            Finally, we validate our insights by improving robustness on real-world BDD-100K, and other autonomous driving datasets via our NN & TK0 approach, which uses 96x fewer trainable parameters than end-to-end training,  
+            while also explaining prior works robustness observations.
           </p>
         </div>
       </div>
