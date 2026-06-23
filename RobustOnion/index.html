@@ -597,15 +597,15 @@ EVA-02 (24 blocks 303M).
         <div class="content has-text-justified">
           <p>Our analysis in Sec. 4.1 &amp; 4.2 highlights three key design principles: (1) the <b>vision backbone</b> is the primary determinant of robustness, (2) <b>shallow layers</b> are most adversely affected by noise, and (3) <b>cross-exchanging information</b> across backbone layers improves feature overlap across severities. We validate these insights with two lightweight modules added on top of a frozen GLIP-T trained on BDD-100K.</p>
           <ul>
-            <li><b>TK0 (Trainable Spatial Tokens):</b> We extend LR-TK0 (Pathak et al., 2025), originally designed for low-resolution image classification, to hierarchical vision transformers (e.g., Swin) for object detection. We drop the expensive teacher-student distillation and retain only the cost-efficient trainable tokens, applied solely to the visual backbone while keeping the entire OV-OD frozen.
-            At every layer (especially shallow), we insert a fixed 32 × 32 set of trainable spatial tokens, interpolated to match the layer's spatial resolution. This enables (i) <b>flexible hierarchy</b>, adapting to varying H × W across layers, and (ii) <b>lower overhead</b> (+5.7%) compared to the fixed-token design (+22.5%) for a 600 × 600 Swin-T input.
+            <li><b>TK0 (Trainable Spatial Tokens):</b> We extend LR-TK0 (Pathak et al., 2025), originally designed for low-resolution image classification, to hierarchical vision transformers (Swin) for object detection. We drop the expensive teacher-student distillation and retain only the cost-efficient trainable tokens, applied solely to the visual backbone while keeping the entire OV-OD frozen.
+            At every layer (especially shallow), we insert a fixed 32×32 set of trainable spatial tokens, interpolated to match the layer's spatial resolution. This enables (i) <b>flexible hierarchy</b>, adapting to varying H×W across layers, and (ii) <b>lower overhead</b> (+5.7%) compared to the fixed-token design (+22.5%) for a 600×600 Swin-T input.
             </li>
 
             <li><b>NN (Cross-Layer Non-Local Block):</b> A simple trainable non-local block, implemented as a single-head self-attention module, where Query/Key/Value are formed by concatenating spatial tokens from <i>all</i> backbone layers. This enables tokens to share spatial information across layers — mirroring the role of the fusion transformer with far fewer parameters.</li>
 
-            <li><b>NN &amp; TK0 (Combined):</b> Combining both insights yields robustness comparable to end-to-end fine-tuning, while using only <b>2.41 M trainable parameters — 96× fewer</b> than E2E. It even surpasses E2E and Fuse baselines on DAWN and Foggy Cityscapes.</li>
+            <li><b>NN &amp; TK0 (Combined):</b> Combining both insights yields robustness comparable to end-to-end fine-tuning, while using only <b>2.41M trainable parameters — 96× fewer</b> than E2E. It even surpasses E2E and Fuse baselines on DAWN and Foggy Cityscapes.</li>
           </ul>
-          <p><b>Setup:</b> GLIP-T is trained on BDD-100K (~698K image-text captions) and zero-shot evaluated on DAWN, Foggy Cityscapes, Virtual KITTI 2, and COCO (to monitor preservation of the original VLM zero-shot ability). Baselines: <b>E2E</b> (full end-to-end fine-tuning) and <b>Fuse</b> (only the fusion transformer is trained).</p>
+          <p><b>Setup:</b> GLIP-T is trained on BDD-100K and zero-shot evaluated on DAWN, Foggy Cityscapes, Virtual KITTI 2, and COCO (to monitor preservation of the original VLM zero-shot ability). Baselines: <b>E2E</b> (full end-to-end fine-tuning) and <b>Fuse</b> (only the fusion transformer is trained).</p>
           </div>
       </div>
     </div>
@@ -756,7 +756,7 @@ EVA-02 (24 blocks 303M).
       url             ={},
       }</code></pre>
     </div>
-</section>
+</section>extend sec 5.126
 <!--End BibTex citation -->
 
 
