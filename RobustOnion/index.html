@@ -258,9 +258,9 @@
             The impact of real-world noise on Open Vocabulary Object Detectors (OV-ODs) remains poorly understood due to their architectural complexity.
             We present our comprehensive analysis Robust Onion, an empirical study that uses controlled
             synthetic visual degradations to peel OV-ODs layer-by-layer, revealing how, why, and where robustness degrades, systematically analyzing feature collapse.
-            Our findings reveal that models with similar vision backbones exhibit comparable robustness, driven by similar feature collapse at similar layers, while factors such as pretraining strategy, architectural nuances, and caption supervision contribute little. Robustness is primarily governed by the image domain rather than annotations, explaining the similar robustness impact on COCO and LVIS, and why datasets like ODinW-13 can give an impression of inflated robustness due to large, isolated objects.
-            Finally, we validate our insights by improving robustness on real-world BDD-100K, and other autonomous driving datasets via our NN & TK0 approach, which uses 96x fewer trainable parameters than end-to-end training,  
-            while also explaining prior works robustness observations.
+            Our findings reveal that models with similar vision backbones exhibit comparable robustness, driven by similar feature collapse at similar layers, while factors such as pretraining strategy, architectural nuances, and caption supervision contribute little. Robustness is primarily governed by the image domain rather than annotations, explaining the similar robustness impact on COCO and LVIS, and why datasets like ODinW-13 can give an inflated impression of robustness due to large, isolated objects.
+            Finally, we validate our insights by improving robustness on real-world BDD-100K and other autonomous driving datasets via our NN & TK0 approach, using 96× fewer trainable parameters than end-to-end training,
+            while also explaining reported robustness observations from prior works.
           </p>
         </div>
       </div>
@@ -277,7 +277,7 @@
         <h2 class="title is-3">Setup 🔨</h2>
         <div class="content has-text-justified">
           <img src="static/images/basic.jpg" alt="Architecture">
-          <div class="figure-caption"> <b>Analysis of VLM architecture towards robustness:</b>  The detailed analysis of VLM architecture layer by layer (peeling layers) to understand the impact of real-world noise on object detection performance. In section 4.1 & 4.2, we analyze the vision features collapsed at different layers, size/architecture of vision backbone, and the effect of fusion. In section 4.3, we analyse the impact of evaluation datasets on robustness, and evaluate what attribute of image/annotation contribute to robustness. Further, the impact of language modality on robustness is evaluated in section 4.4. Image modified from GLIP.</div>
+          <div class="figure-caption"> <b>Analysis of VLM architecture towards robustness:</b> The detailed analysis of VLM architecture layer by layer (peeling layers) to understand the impact of real-world noise on object detection performance. Sec. 4.1 (<i>WHERE: Model-Based Analysis</i>) analyses overall detector size, backbone, pretraining, and fine-tuning. Sec. 4.2 (<i>WHY: Insight into Transformers</i>) peels the backbone, enhancer, and fusion to localize feature collapse layer-by-layer. Sec. 4.3 (<i>WHAT: Robustness as a function of Dataset</i>) studies image-domain factors — object size, count, occlusion, and class. Sec. 4.4 (<i>WHERE: Captions & Prompt Engineering</i>) evaluates caption expressiveness, prompt rewording, and superclass grouping. Image modified from GLIP.</div>
         </div>
         <br>
         <div class="container has-text-centered">
@@ -322,7 +322,7 @@
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Sec. 4.1 Overall Models 🥸</h2>
+      <h2 class="title is-3">Sec. 4.1 WHERE: Model-Based Analysis 🥸</h2>
       <p style="display: flex; align-items: center; gap: 12px;">
         <span style="font-size: 40px; line-height: 1;">🔬</span>
         <span style="font-size: 20px;"><b>Click on the figures to enlarge</b></span>
@@ -402,7 +402,7 @@ EVA-02 (24 blocks 303M).
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Sec. 4.2 Insight into Model Depth & Architecture 🤯</h2>
+      <h2 class="title is-3">Sec. 4.2 WHY: Insight into Transformers (GLIP, MM-GDINO & GLEE) 🤯</h2>
       <p style="display: flex; align-items: center; gap: 12px;">
         <span style="font-size: 40px; line-height: 1;">🔬</span>
         <span style="font-size: 20px;"><b>Click on the figures to enlarge</b></span>
@@ -460,7 +460,7 @@ EVA-02 (24 blocks 303M).
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Sec. 4.3 Robustness because of input image? 😨</h2>
+      <h2 class="title is-3">Sec. 4.3 WHAT: Robustness as a function of Dataset 😨</h2>
       <p style="display: flex; align-items: center; gap: 12px;">
         <span style="font-size: 40px; line-height: 1;">🔬</span>
         <span style="font-size: 20px;"><b>Click on the figures to enlarge</b></span>
@@ -525,7 +525,7 @@ EVA-02 (24 blocks 303M).
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Sec. 4.4 Role of Language 🤔</h2>
+      <h2 class="title is-3">Sec. 4.4 WHERE: Expressiveness of Captions & Prompt Engineering 🤔</h2>
       <p style="display: flex; align-items: center; gap: 12px;">
         <span style="font-size: 40px; line-height: 1;">🔬</span>
         <span style="font-size: 20px;"><b>Click on the figures to enlarge</b></span>
@@ -593,28 +593,19 @@ EVA-02 (24 blocks 303M).
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Emperical verification of Analysis <br> LRTKO+ & LRTKO++ </h2>
+        <h2 class="title is-3">Sec. 5.1 Validating Model Design on Real-World Datasets <br> TK0 &amp; NN 🔧</h2>
         <div class="content has-text-justified">
+          <p>Our analysis in Sec. 4.1 &amp; 4.2 highlights three key design principles: (1) the <b>vision backbone</b> is the primary determinant of robustness, (2) <b>shallow layers</b> are most adversely affected by noise, and (3) <b>cross-exchanging information</b> across backbone layers improves feature overlap across severities. We validate these insights with two lightweight modules added on top of a frozen GLIP-T trained on BDD-100K.</p>
           <ul>
-            <li><b>LRTKO+:</b> We extend LR-TK0 (Pathak et al., 2025), originally designed for low-resolution image classification, to hierarchical vision transformers (e.g., Swin) for object detection.
+            <li><b>TK0 (Trainable Spatial Tokens):</b> We extend LR-TK0 (Pathak et al., 2025), originally designed for low-resolution image classification, to hierarchical vision transformers (e.g., Swin) for object detection. We drop the expensive teacher-student distillation and retain only the cost-efficient trainable tokens, applied solely to the visual backbone while keeping the entire OV-OD frozen.
+            At every layer (especially shallow), we insert a fixed 32 × 32 set of trainable spatial tokens, interpolated to match the layer's spatial resolution. This enables (i) <b>flexible hierarchy</b>, adapting to varying H × W across layers, and (ii) <b>lower overhead</b> (+5.7%) compared to the fixed-token design (+22.5%) for a 600 × 600 Swin-T input.
             </li>
-            At every layer (especially shallow), we insert 32 × 32 trainable spatial tokens interpolated to match the layer’s spatial resolution. This allows Flexible hierarchy (object detectors have a variable spatial resolution) and lower parameter overhead (+5.7%) compared to matching the entire spatial resolution (+22.5%).
 
-            <li><b>LRTKO++:</b> On top of LR-TK0+, we introduce a lightweight continual learning strategy to simulate real-world degradations to improve robustness. Unlike distillation (which requires two passes for teacher & student), continual learning has no additional cost (single forward pass)</li>
-          
+            <li><b>NN (Cross-Layer Non-Local Block):</b> A simple trainable non-local block, implemented as a single-head self-attention module, where Query/Key/Value are formed by concatenating spatial tokens from <i>all</i> backbone layers. This enables tokens to share spatial information across layers — mirroring the role of the fusion transformer with far fewer parameters.</li>
+
+            <li><b>NN &amp; TK0 (Combined):</b> Combining both insights yields robustness comparable to end-to-end fine-tuning, while using only <b>2.41 M trainable parameters — 96× fewer</b> than E2E. It even surpasses E2E and Fuse baselines on DAWN and Foggy Cityscapes.</li>
           </ul>
-          
-          <p><b>Curriculum-Based Pixelation Strategy:</b></p>
-          <ul>
-            <li>
-              <b>Stage 1 (Epochs 1 to T1, T1 = 10):</b>
-              <br>Training starts with clean images. Pixelation is gradually introduced inside ground-truth bounding boxes with linearly increasing probability. This helps the model learn robust foreground object representations against clean backgrounds.
-            </li>
-            <li>
-              <b>Stage 2 (After T1):</b>
-              <br>Pixelation is progressively applied to regions outside ground-truth boxes, while continuing to pixelate foreground objects. This simulates realistic degradation in both foreground and background regions.
-            </li>
-          </ul>
+          <p><b>Setup:</b> GLIP-T is trained on BDD-100K (~698K image-text captions) and zero-shot evaluated on DAWN, Foggy Cityscapes, Virtual KITTI 2, and COCO (to monitor preservation of the original VLM zero-shot ability). Baselines: <b>E2E</b> (full end-to-end fine-tuning) and <b>Fuse</b> (only the fusion transformer is trained).</p>
           </div>
       </div>
     </div>
