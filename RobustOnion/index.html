@@ -277,7 +277,7 @@
         <h2 class="title is-3">Setup 🔨</h2>
         <div class="content has-text-justified">
           <img src="static/images/basic.jpg" alt="Architecture">
-          <div class="figure-caption"> <b>Analysis of VLM architecture towards robustness:</b> The detailed analysis of VLM architecture layer by layer (peeling layers) to understand the impact of real-world noise on object detection performance. Sec. 4.1 (<i>WHERE: Model-Based Analysis</i>) analyses overall detector size, backbone, pretraining, and fine-tuning. Sec. 4.2 (<i>WHY: Insight into Transformers</i>) peels the backbone, enhancer, and fusion to localize feature collapse layer-by-layer. Sec. 4.3 (<i>WHAT: Robustness as a function of Dataset</i>) studies image-domain factors — object size, count, occlusion, and class. Sec. 4.4 (<i>WHERE: Captions & Prompt Engineering</i>) evaluates caption expressiveness, prompt rewording, and superclass grouping. Image modified from GLIP.</div>
+          <div class="figure-caption"> <b>Analysis of VLM architecture towards robustness:</b> The detailed analysis of VLM architecture layer by layer (peeling layers) to understand the impact of real-world noise on object detection performance. (1) <i>WHERE: Model-Based Analysis</i> examines overall detector size, backbone, pretraining, and fine-tuning. (2) <i>WHY: Insight into Transformers</i> peels the backbone, enhancer, and fusion to localize feature collapse layer-by-layer. (3) <i>WHAT: Robustness as a function of Dataset</i> studies image-domain factors — object size, count, occlusion, and class. (4) <i>WHERE: Captions & Prompt Engineering</i> evaluates caption expressiveness, prompt rewording, and superclass grouping. Image modified from GLIP.</div>
         </div>
         <br>
         <div class="container has-text-centered">
@@ -318,11 +318,11 @@
 </section>
  
 
-<!-- Sec. 4.1 MODEL-BASED ANALYSIS -->
+<!-- 1. MODEL-BASED ANALYSIS -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Sec. 4.1 WHERE: Model-Based Analysis 🥸</h2>
+      <h2 class="title is-3">1. WHERE: Model-Based Analysis 🥸</h2>
       <p style="display: flex; align-items: center; gap: 12px;">
         <span style="font-size: 40px; line-height: 1;">🔬</span>
         <span style="font-size: 20px;"><b>Click on the figures to enlarge</b></span>
@@ -398,11 +398,11 @@ EVA-02 (24 blocks 303M).
 </section>
 
 
-<!-- Sec. 4.2 DEEPER INSIGHT INTO TRANSFORMERS -->
+<!-- 2. DEEPER INSIGHT INTO TRANSFORMERS -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Sec. 4.2 WHY: Insight into Transformers (GLIP, MM-GDINO & GLEE) 🤯</h2>
+      <h2 class="title is-3">2. WHY: Insight into Transformers (GLIP, MM-GDINO & GLEE) 🤯</h2>
       <p style="display: flex; align-items: center; gap: 12px;">
         <span style="font-size: 40px; line-height: 1;">🔬</span>
         <span style="font-size: 20px;"><b>Click on the figures to enlarge</b></span>
@@ -456,11 +456,11 @@ EVA-02 (24 blocks 303M).
   </div>
 </section>
 
-<!-- Sec. 4.3 Robustness because of input image? -->
+<!-- 3. Robustness because of input image? -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Sec. 4.3 WHAT: Robustness as a function of Dataset 😨</h2>
+      <h2 class="title is-3">3. WHAT: Robustness as a function of Dataset 😨</h2>
       <p style="display: flex; align-items: center; gap: 12px;">
         <span style="font-size: 40px; line-height: 1;">🔬</span>
         <span style="font-size: 20px;"><b>Click on the figures to enlarge</b></span>
@@ -521,11 +521,11 @@ EVA-02 (24 blocks 303M).
   </div>
 </section>
 
-<!-- Sec. 4.4 Role of Language -->
+<!-- 4. Role of Language -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Sec. 4.4 WHERE: Expressiveness of Captions & Prompt Engineering 🤔</h2>
+      <h2 class="title is-3">4. WHERE: Expressiveness of Captions & Prompt Engineering 🤔</h2>
       <p style="display: flex; align-items: center; gap: 12px;">
         <span style="font-size: 40px; line-height: 1;">🔬</span>
         <span style="font-size: 20px;"><b>Click on the figures to enlarge</b></span>
@@ -593,9 +593,9 @@ EVA-02 (24 blocks 303M).
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Sec. 5.1 Validating Model Design (TK0 &amp; NN) on Real-World Datasets  🔧</h2>
+        <h2 class="title is-3">5. Validating Model Design (TK0 &amp; NN) on Real-World Datasets  🔧</h2>
         <div class="content has-text-justified">
-          <p>Our analysis in Sec. 4.1 &amp; 4.2 highlights three key design principles: (1) the <b>vision backbone</b> is the primary determinant of robustness, (2) <b>shallow layers</b> are most adversely affected by noise, and (3) <b>cross-exchanging information</b> across backbone layers improves feature overlap across severities. We validate these insights with two lightweight modules added on top of a frozen GLIP-T trained on BDD-100K.</p>
+          <p>Our model-based and transformer-level analyses above highlight three key design principles: (1) the <b>vision backbone</b> is the primary determinant of robustness, (2) <b>shallow layers</b> are most adversely affected by noise, and (3) <b>cross-exchanging information</b> across backbone layers improves feature overlap across severities. We validate these insights with two lightweight modules added on top of a frozen GLIP-T trained on BDD-100K.</p>
           <ul>
             <li><b>TK0 (Trainable Spatial Tokens):</b> We extend LR-TK0 (Pathak et al., 2025), originally designed for low-resolution image classification, to hierarchical vision transformers (Swin) for object detection. We drop the expensive teacher-student distillation and retain only the cost-efficient trainable tokens, applied solely to the visual backbone while keeping the entire OV-OD frozen.
             At every layer (especially shallow), we insert a fixed 32×32 set of trainable spatial tokens, interpolated to match the layer's spatial resolution. This enables (i) <b>flexible hierarchy</b>, adapting to varying H×W across layers, and (ii) <b>lower overhead</b> (+5.7%) compared to the fixed-token design (+22.5%) for a 600×600 Swin-T input.
