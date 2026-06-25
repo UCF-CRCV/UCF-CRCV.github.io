@@ -100,17 +100,17 @@
                       </a>
                     </span>
                   
-                    
-                  <!-- Github link
+                    <!--  -->
+                  <!-- Github link -->
                     <span class="link-block">
-                      <a href="#" target="_blank"
+                      <a href="https://github.com/ppriyank/RobustOnion" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fab fa-github"></i>
                       </span>
-                      <span>Code (Coming Soon)</span>
+                      <span>Code</span>
                       </a>
-                    </span> -->
+                    </span>
 
                    <!-- ArXiv abstract Link -->
                     <span class="link-block">
@@ -144,11 +144,6 @@
       <div class="column">
         <h2 class="title is-3 has-text-centered">Model Robustness Ranking 📋</h2>
         <div class="content">
-          <div style="margin: 1%; display: flex; align-items: center; justify-content: center">
-            <button id="toggle-rows">
-                Expand
-            </button>
-          </div>
           <table class="ranking-table">
             <thead>
               <tr>
@@ -220,9 +215,12 @@
               <tr><td class='model group-sep' >YOLO-Worldv2-M-640</td><td class='group-sep' >42.80</td><td>9.20</td><td class='robustness' data-score='0.2149532710280374'>0.21</td><td class='robustness group-sep' data-score='0.214949648631117'>0.21</td><td>24.40</td><td class='robustness' data-score='0.5700934579439253'>0.57</td><td class='robustness group-sep' data-score='0.5700838507173104'>0.57</td><td>11.30</td><td class='robustness' data-score='0.2640186915887851'>0.26</td><td class='robustness group-sep' data-score='0.2640142423403937'>0.26</td><td class='group-sep' >0.35</td><td>0.35</td></tr>
               <tr><td class='model group-sep' >RegionCLIP R50 (RC)</td><td class='group-sep' >58.18</td><td>20.10</td><td class='robustness' data-score='0.3454795462358199'>0.35</td><td class='robustness group-sep' data-score='0.34547954571326767'>0.35</td><td>28.82</td><td class='robustness' data-score='0.4837193689157436'>0.48</td><td class='robustness group-sep' data-score='0.4837193681840979'>0.48</td><td>8.22</td><td class='robustness' data-score='0.1379657603222558'>0.14</td><td class='robustness group-sep' data-score='0.13796576011357684'>0.14</td><td class='group-sep' >0.32</td><td>0.32</td></tr>
               <tr><td class='model group-sep' >YOLO-Worldv2-S-640</td><td class='group-sep' >37.50</td><td>5.30</td><td class='robustness' data-score='0.1413333333333333'>0.14</td><td class='robustness group-sep' data-score='0.14130272181220538'>0.14</td><td>20.30</td><td class='robustness' data-score='0.5413333333333333'>0.54</td><td class='robustness group-sep' data-score='0.5412160854316547'>0.54</td><td>6.80</td><td class='robustness' data-score='0.1813333333333333'>0.18</td><td class='robustness group-sep' data-score='0.18129405817415029'>0.18</td><td class='group-sep' >0.29</td><td>0.29</td></tr>
-
-
             </tbody>
+            <div style="margin: 1%; display: flex; align-items: center; justify-content: center">
+              <button id="toggle-rows">
+                  Expand
+              </button>
+            </div>
             <caption> Assuming random accuracy to be 0, we apply WAR metrics (alpha=60, Pathak et al., 2025) to nullify abnormally high robustness score from models like <strong>FIBER-B</strong>, which have a clean accuracy ≈ random. <b>Random predictions remain random after noise</b>, resulting in minimal drop, giving abnormally high robustness score.
               Models ranked by average WAR robustness metrics across Pixelation, Motion Blur, and Turbulence perturbation. Higher the Intensity of color, greater is the robusntess [0-1] against the respective noises.</caption>
           </table>
