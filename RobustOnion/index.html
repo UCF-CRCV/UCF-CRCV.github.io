@@ -2,11 +2,12 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="CoSPlan: Corrective Sequential Planning via Scene Graph Incremental Updates">
-  <meta property="og:title" content="CoSPlan: Corrective Sequential Planning"/>
-  <meta property="og:description" content="CoSPlan: Corrective Sequential Planning via Scene Graph Incremental Updates"/>
+  <meta name="description" content="Robust onion: Peeling Open Vocab Object Detectors Under Noise">
+  <meta property="og:title" content="Robust onion: Peeling Open Vocab Object Detectors Under Noise"/>
+  <meta property="og:description" content="Robust onion: Peeling Open Vocab Object Detectors Under Noise"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/images/logo.png" />
   <meta property="og:image:width" content="1200"/>
@@ -16,16 +17,16 @@
   <meta name="twitter:title" content="Robust onion: Peeling Open Vocab Object Detectors Under Noise">
   <meta name="twitter:description" content="Robust onion: Peeling Open Vocab Object Detectors Under Noise">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/logo.jpg">
+  <meta name="twitter:image" content="static/images/logo.png">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="Vision Language Models, Sequential Planning, Scene Graphs, CVPR">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="author" content="Priyank Pathak">
 
   <title>Robust onion: Peeling Open Vocab Object Detectors Under Noise</title>
   
-  <link rel="icon" type="image/x-icon" href="static/images/logo.jpg">
+  <link rel="icon" type="image/x-icon" href="static/images/logo.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -43,53 +44,52 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
-
-
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
 </head>
 
 
 <body>
 
 
-  <section class="hero">
+<section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <div class="title-container">
               <h1>Robust Onion: Peeling Open Vocab Object Detectors Under Noise</h1>
-              <img src="static/images/logo.png" alt="CoSPlan logo" style="width:150px; height:150px;">
+              <img src="static/images/logo.png" alt="RobustOnion logo" style="width:150px; height:150px;">
             </div>
             <div class="custom-tag">
-                <span>Interpretable AI</span>
-                <span>Explainable AI</span>
-                <span>Robustness</span>
-                <span>Noise</span>
-                <span>Opening Black-box</span>
-                <span>VLMs</span>
-                <span>Analysis</span>
-                <span>Benchmark</span>
+              <span>Interpretable AI</span>
+              <span>Explainable AI</span>
+              <span>Robustness</span>
+              <span>Noise</span>
+              <span>Opening Black-box</span>
+              <span>VLMs</span>
+              <span>Analysis</span>
+              <span>Benchmark</span>
             </div>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <span class="author-block"><a href="https://ppriyank.github.io/" target="_blank">Priyank Pathak*</a><sup>1</sup>,</span>
-                <span class="author-block"><a href="https://mukil07.github.io/ " target="_blank">Mukilan Karuppasamy*</a><sup>1</sup>,</span>
-                <span class="author-block"><a href="https://www.sochastic.me/" target="_blank">Aaditya Baranwal</a><sup>1</sup>,</span>
-                <span class="author-block"><a href="https://mse.ucf.edu/person/shrutivyas/" target="_blank">Shruti Vyas</a><sup>1</sup>,</span>
-                <span class="author-block"><a href="https://scholar.google.com/citations?user=D_JvEcwAAAAJ&hl=en" target="_blank">Yogesh S Rawat</a><sup>1</sup></span>
+                <span class="author-block"><a href="https://ppriyank.github.io/" target="_blank">Priyank Pathak*</a>,</span>
+                <span class="author-block"><a href="https://mukil07.github.io/ " target="_blank">Mukilan Karuppasamy*</a>,</span>
+                <span class="author-block"><a href="https://www.sochastic.me/" target="_blank">Aaditya Baranwal</a>,</span>
+                <span class="author-block"><a href="https://mse.ucf.edu/person/shrutivyas/" target="_blank">Shruti Vyas</a> and </span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=D_JvEcwAAAAJ&hl=en" target="_blank">Yogesh S Rawat</a></span>
               </span>
-            </div>
+            </div>  
+                <div class="is-size-5 publication-authors">                
+                  <span class="author-block">University of Central Florida</span>
+                  <br>
+                  <span class="author-block"><sup>*</sup><i>Equal Contribution</i></span>
+                  <br>
+                  <span class="author-block"><b style="color:red;">ECCV'26</b></span>
+                </div>
                   
-                  <div class="is-size-5 publication-authors">                
-                    <span class="author-block"><sup>1</sup>University of Central Florida</span>
-                    <br>
-                    <span class="author-block"><sup>*</sup><i>Equal Contribution</i></span>
-                    <br>
-                    <span class="author-block"><b style="color:red;">ECCV'26</b></span>
-                  </div>
-                  
-                  <div class="column has-text-centered">
-                    <div class="publication-links">  
+                <div class="column has-text-centered">
+                  <div class="publication-links">  
                     <!-- Paper -->
                     <span class="link-block">
                       <a href="#" target="_blank"
@@ -98,8 +98,7 @@
                         <span>Paper (Coming Soon)</span>
                       </a>
                     </span>
-                  
-                    <!--  -->
+                    
                   <!-- Github link -->
                     <span class="link-block">
                       <a href="https://github.com/ppriyank/RobustOnion" target="_blank"
@@ -137,142 +136,156 @@
 
 
 <!-- Model Rankings Table -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column">
-        <h2 class="title is-3 has-text-centered">Model Robustness Ranking 📋</h2>
-        <div class="content">
-          <table class="ranking-table">
-            <thead>
-              <tr>
-                <!-- <th class="group-sep" rowspan="2">Rank</th> -->
-                <th class="group-sep" rowspan="2">Model</th>
-                <th class="group-sep" rowspan="2">HQ</th>
-                <th class="group-sep" colspan="3">Pixelation</th>
-                <th class="group-sep" colspan="3">Motion Blur</th>
-                <th class="group-sep" colspan="3">Turbulence</th>
-                <th class="group-sep" rowspan="2">Average <br>Robustness <br> </th>
-                <th  rowspan="2">Average <br>WAR <br> </th>
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column">
+          <h2 class="title is-3 has-text-centered">Model Robustness Ranking 📋</h2>
+          <div class="content">
+            <table class="ranking-table">
+              <thead>
+                <tr>
+                  <!-- <th class="group-sep" rowspan="2">Rank</th> -->
+                  <th class="group-sep" rowspan="2">Model</th>
+                  <th class="group-sep" rowspan="2">HQ</th>
+                  <th class="group-sep" colspan="3">Pixelation</th>
+                  <th class="group-sep" colspan="3">Motion Blur</th>
+                  <th class="group-sep" colspan="3">Turbulence</th>
+                  <th class="group-sep" rowspan="2">Average <br>Robustness <br> </th>
+                  <th  rowspan="2">Average <br>WAR <br> </th>
 
-              </tr>
-              <tr>
-                <th >AP</th>
-                <th >RR</th>
-                <th class="group-sep" >WAR</th>
-                <th >AP</th>
-                <th >RR</th>
-                <th class="group-sep" >WAR</th>
-                <th >AP</th>
-                <th >RR</th>
-                <th class="group-sep" >WAR</th>
-              </tr>
-            </thead>
-            <tbody>         
-          
-              <tr><td class='model group-sep' >GLEE-Plus-pretrain-Stage 1</td><td class='group-sep' >44.00</td><td>36.17</td><td class='robustness' data-score='0.8220454545454545'>0.82</td><td class='robustness group-sep' data-score='0.822038039204398'>0.82</td><td>36.89</td><td class='robustness' data-score='0.838593751598242'>0.84</td><td class='robustness group-sep' data-score='0.8385861869816608'>0.84</td><td>28.28</td><td class='robustness' data-score='0.6427370768281331'>0.64</td><td class='robustness group-sep' data-score='0.6427312789557551'>0.64</td><td class='group-sep' >0.77</td><td>0.77</td></tr>
-              <tr><td class='model group-sep' >GLEE-Pro-pretrain-Stage 1</td><td class='group-sep' >50.83</td><td>44.73</td><td class='robustness' data-score='0.8799921306315168'>0.88</td><td class='robustness group-sep' data-score='0.8799919677064922'>0.88</td><td>39.89</td><td class='robustness' data-score='0.7848511795269301'>0.78</td><td class='robustness group-sep' data-score='0.7848510342166559'>0.78</td><td>27.30</td><td class='robustness' data-score='0.5369970706102928'>0.54</td><td class='robustness group-sep' data-score='0.5369969711886526'>0.54</td><td class='group-sep' >0.73</td><td>0.73</td></tr>
-              <tr><td class='model group-sep' >GLEE-Pro-joint-Stage 2</td><td class='group-sep' >61.96</td><td>52.82</td><td class='robustness' data-score='0.8524854744996773'>0.85</td><td class='robustness group-sep' data-score='0.8524854744151417'>0.85</td><td>46.34</td><td class='robustness' data-score='0.7479885665035999'>0.75</td><td class='robustness group-sep' data-score='0.7479885664294266'>0.75</td><td>32.50</td><td class='robustness' data-score='0.5245891188105549'>0.52</td><td class='robustness group-sep' data-score='0.5245891187585348'>0.52</td><td class='group-sep' >0.71</td><td>0.71</td></tr>
-              <tr><td class='model group-sep' >GLEE-Pro-scaleup-Stage 3</td><td class='group-sep' >61.71</td><td>51.80</td><td class='robustness' data-score='0.8394101442229784'>0.84</td><td class='robustness group-sep' data-score='0.8394101441227731'>0.84</td><td>45.28</td><td class='robustness' data-score='0.7337184137753899'>0.73</td><td class='robustness group-sep' data-score='0.7337184136878017'>0.73</td><td>31.50</td><td class='robustness' data-score='0.5105140896823127'>0.51</td><td class='robustness group-sep' data-score='0.5105140896213697'>0.51</td><td class='group-sep' >0.69</td><td>0.69</td></tr>
-              <tr><td class='model group-sep' >MM-GDINO-L</td><td class='group-sep' >53.00</td><td>37.60</td><td class='robustness' data-score='0.7094339622641509'>0.71</td><td class='robustness group-sep' data-score='0.7094339282771551'>0.71</td><td>38.45</td><td class='robustness' data-score='0.7254716981132076'>0.73</td><td class='robustness group-sep' data-score='0.7254716633578888'>0.73</td><td>28.45</td><td class='robustness' data-score='0.5367924528301886'>0.54</td><td class='robustness group-sep' data-score='0.5367924271139645'>0.54</td><td class='group-sep' >0.66</td><td>0.66</td></tr>
-              <tr><td class='model group-sep' >GLEE-Plus-joint-Stage 2</td><td class='group-sep' >60.44</td><td>41.88</td><td class='robustness' data-score='0.6929185969556586'>0.69</td><td class='robustness group-sep' data-score='0.6929185967458457'>0.69</td><td>44.10</td><td class='robustness' data-score='0.7296811018736816'>0.73</td><td class='robustness group-sep' data-score='0.7296811016527371'>0.73</td><td>32.89</td><td class='robustness' data-score='0.5442139223228689'>0.54</td><td class='robustness group-sep' data-score='0.5442139221580831'>0.54</td><td class='group-sep' >0.66</td><td>0.66</td></tr>
-              <tr><td class='model group-sep' >GLEE-Plus-scaleup-Stage 3</td><td class='group-sep' >60.34</td><td>42.20</td><td class='robustness' data-score='0.6993702353331124'>0.70</td><td class='robustness group-sep' data-score='0.6993702351054298'>0.70</td><td>42.84</td><td class='robustness' data-score='0.7099200144509268'>0.71</td><td class='robustness group-sep' data-score='0.7099200142198097'>0.71</td><td>31.73</td><td class='robustness' data-score='0.525774272212707'>0.53</td><td class='robustness group-sep' data-score='0.5257742720415393'>0.53</td><td class='group-sep' >0.65</td><td>0.65</td></tr>
-              <tr><td class='model group-sep' >FIBER-B*-RefCOCOg</td><td class='group-sep' >22.70</td><td>15.60</td><td class='robustness' data-score='0.6872246696035242'>0.69</td><td class='robustness group-sep' data-score='0.6560089666264243'>0.66</td><td>17.22</td><td class='robustness' data-score='0.7590377380672466'>0.76</td><td class='robustness group-sep' data-score='0.7245600808644187'>0.72</td><td>13.06</td><td class='robustness' data-score='0.5757259581471902'>0.58</td><td class='robustness group-sep' data-score='0.5495748443984692'>0.55</td><td class='group-sep' >0.67</td><td>0.64</td></tr>
-              <tr><td class='model group-sep' >MM-GDINO-L* - ALL</td><td class='group-sep' >60.30</td><td>41.70</td><td class='robustness' data-score='0.691542288557214'>0.69</td><td class='robustness group-sep' data-score='0.691542288325466'>0.69</td><td>42.75</td><td class='robustness' data-score='0.7089552238805972'>0.71</td><td class='robustness group-sep' data-score='0.7089552236430139'>0.71</td><td>31.80</td><td class='robustness' data-score='0.5273631840796021'>0.53</td><td class='robustness group-sep' data-score='0.5273631839028735'>0.53</td><td class='group-sep' >0.64</td><td>0.64</td></tr>
-              <tr><td class='model group-sep' >MM-GDINO-B (O_G_V)</td><td class='group-sep' >52.50</td><td>35.70</td><td class='robustness' data-score='0.6799999999999999'>0.68</td><td class='robustness group-sep' data-score='0.6799999552941951'>0.68</td><td>38.15</td><td class='robustness' data-score='0.7266666666666667'>0.73</td><td class='robustness group-sep' data-score='0.7266666188928164'>0.73</td><td>27.25</td><td class='robustness' data-score='0.5190476190476191'>0.52</td><td class='robustness group-sep' data-score='0.5190475849234403'>0.52</td><td class='group-sep' >0.64</td><td>0.64</td></tr>
-              <tr><td class='model group-sep' >GLIP-L [7]</td><td class='group-sep' >51.23</td><td>34.20</td><td class='robustness' data-score='0.6675775912551241'>0.67</td><td class='robustness group-sep' data-score='0.6675774945091438'>0.67</td><td>36.06</td><td class='robustness' data-score='0.7039263719854384'>0.70</td><td class='robustness group-sep' data-score='0.7039262699717582'>0.70</td><td>26.36</td><td class='robustness' data-score='0.5145957974253619'>0.51</td><td class='robustness group-sep' data-score='0.5145957228496489'>0.51</td><td class='group-sep' >0.63</td><td>0.63</td></tr>
-              <tr><td class='model group-sep' >MM-GDINO-B* - ALL </td><td class='group-sep' >59.50</td><td>40.10</td><td class='robustness' data-score='0.6739495798319328'>0.67</td><td class='robustness group-sep' data-score='0.6739495794305478'>0.67</td><td>42.05</td><td class='robustness' data-score='0.7067226890756302'>0.71</td><td class='robustness group-sep' data-score='0.7067226886547264'>0.71</td><td>29.90</td><td class='robustness' data-score='0.5025210084033613'>0.50</td><td class='robustness group-sep' data-score='0.5025210081040743'>0.50</td><td class='group-sep' >0.63</td><td>0.63</td></tr>
-              <tr><td class='model group-sep' >FIBER-B*-LEVIS-FT</td><td class='group-sep' >50.70</td><td>31.70</td><td class='robustness' data-score='0.6252465483234714'>0.63</td><td class='robustness group-sep' data-score='0.6252464230227515'>0.63</td><td>35.60</td><td class='robustness' data-score='0.7019396990870072'>0.70</td><td class='robustness group-sep' data-score='0.701939558416819'>0.70</td><td>25.19</td><td class='robustness' data-score='0.4967825052419858'>0.50</td><td class='robustness group-sep' data-score='0.4967824056857297'>0.50</td><td class='group-sep' >0.61</td><td>0.61</td></tr>
-              <tr><td class='model group-sep' >FIBER-B*-COCO-FT</td><td class='group-sep' >58.40</td><td>36.60</td><td class='robustness' data-score='0.6267123287671234'>0.63</td><td class='robustness group-sep' data-score='0.6267123279543978'>0.63</td><td>39.66</td><td class='robustness' data-score='0.6790837324261226'>0.68</td><td class='robustness group-sep' data-score='0.6790837315454814'>0.68</td><td>28.40</td><td class='robustness' data-score='0.4862805313118974'>0.49</td><td class='robustness group-sep' data-score='0.4862805306812849'>0.49</td><td class='group-sep' >0.60</td><td>0.60</td></tr>
-              <tr><td class='model group-sep' >FIBER-B</td><td class='group-sep' >49.47</td><td>30.80</td><td class='robustness' data-score='0.622599555286032'>0.62</td><td class='robustness group-sep' data-score='0.6225992939704765'>0.62</td><td>33.53</td><td class='robustness' data-score='0.6777479820506946'>0.68</td><td class='robustness group-sep' data-score='0.6777476975884125'>0.68</td><td>23.09</td><td class='robustness' data-score='0.4667223652117667'>0.47</td><td class='robustness group-sep' data-score='0.4667221693205023'>0.47</td><td class='group-sep' >0.59</td><td>0.59</td></tr>
-              <tr><td class='model group-sep' >RCx4 Fully80-COCO-FT</td><td class='group-sep' >88.77</td><td>56.86</td><td class='robustness' data-score='0.6405317111636815'>0.64</td><td class='robustness group-sep' data-score='0.6405317111636815'>0.64</td><td>62.05</td><td class='robustness' data-score='0.6989974090345837'>0.70</td><td class='robustness group-sep' data-score='0.6989974090345837'>0.70</td><td>36.98</td><td class='robustness' data-score='0.416582178663963'>0.42</td><td class='robustness group-sep' data-score='0.416582178663963'>0.42</td><td class='group-sep' >0.59</td><td>0.59</td></tr>
-              <tr><td class='model group-sep' >RCx4-COCO-FT</td><td class='group-sep' >80.00</td><td>49.80</td><td class='robustness' data-score='0.6224999999999999'>0.62</td><td class='robustness group-sep' data-score='0.6224999999999999'>0.62</td><td>53.91</td><td class='robustness' data-score='0.673875'>0.67</td><td class='robustness group-sep' data-score='0.673875'>0.67</td><td>34.33</td><td class='robustness' data-score='0.429125'>0.43</td><td class='robustness group-sep' data-score='0.429125'>0.43</td><td class='group-sep' >0.58</td><td>0.58</td></tr>
-              <tr><td class='model group-sep' >FIBER-B*-RefCOCO+</td><td class='group-sep' >18.00</td><td>12.30</td><td class='robustness' data-score='0.6833333333333333'>0.68</td><td class='robustness group-sep' data-score='0.5855276405794322'>0.59</td><td>13.38</td><td class='robustness' data-score='0.7437346027747421'>0.74</td><td class='robustness group-sep' data-score='0.6372836592877696'>0.64</td><td>9.74</td><td class='robustness' data-score='0.5410191342360199'>0.54</td><td class='robustness group-sep' data-score='0.463582912942747'>0.46</td><td class='group-sep' >0.66</td><td>0.56</td></tr>
-              <tr><td class='model group-sep' >MM-GDINO-T (O_G_GR)</td><td class='group-sep' >50.50</td><td>30.60</td><td class='robustness' data-score='0.6059405940594059'>0.61</td><td class='robustness group-sep' data-score='0.6059404569481738'>0.61</td><td>33.00</td><td class='robustness' data-score='0.6534653465346535'>0.65</td><td class='robustness group-sep' data-score='0.6534651986695992'>0.65</td><td>19.20</td><td class='robustness' data-score='0.3801980198019802'>0.38</td><td class='robustness group-sep' data-score='0.38019793377140315'>0.38</td><td class='group-sep' >0.55</td><td>0.55</td></tr>
-              <tr><td class='model group-sep' >MM-GDINO-T (O_G_GR_V)</td><td class='group-sep' >50.40</td><td>30.10</td><td class='robustness' data-score='0.5972222222222222'>0.60</td><td class='robustness group-sep' data-score='0.5972220786497653'>0.60</td><td>33.13</td><td class='robustness' data-score='0.6574073412698413'>0.66</td><td class='robustness group-sep' data-score='0.6574071832288582'>0.66</td><td>19.20</td><td class='robustness' data-score='0.3809523809523809'>0.38</td><td class='robustness group-sep' data-score='0.3809522893712788'>0.38</td><td class='group-sep' >0.55</td><td>0.55</td></tr>
-              <tr><td class='model group-sep' >FIBER-B*-RefCOCO</td><td class='group-sep' >15.50</td><td>10.90</td><td class='robustness' data-score='0.7032258064516129'>0.70</td><td class='robustness group-sep' data-score='0.5368618255061164'>0.54</td><td>12.37</td><td class='robustness' data-score='0.7971590664890188'>0.80</td><td class='robustness group-sep' data-score='0.6085730468474969'>0.61</td><td>9.86</td><td class='robustness' data-score='0.6353419005458375'>0.64</td><td class='robustness group-sep' data-score='0.48503739398965484'>0.49</td><td class='group-sep' >0.71</td><td>0.54</td></tr>
-              <tr><td class='model group-sep' >RCx4-LVIS-FT</td><td class='group-sep' >82.70</td><td>47.80</td><td class='robustness' data-score='0.5779927448609431'>0.58</td><td class='robustness group-sep' data-score='0.5779927448609431'>0.58</td><td>53.39</td><td class='robustness' data-score='0.6396310051515515'>0.64</td><td class='robustness group-sep' data-score='0.6396310051515515'>0.64</td><td>33.49</td><td class='robustness' data-score='0.4012219959266803'>0.40</td><td class='robustness group-sep' data-score='0.4012219959266803'>0.40</td><td class='group-sep' >0.54</td><td>0.54</td></tr>
-              <tr><td class='model group-sep' >GDINO-T Swin-T (O_G_CAP4)</td><td class='group-sep' >48.50</td><td>29.30</td><td class='robustness' data-score='0.6041237113402061'>0.60</td><td class='robustness group-sep' data-score='0.6041232628936312'>0.60</td><td>30.90</td><td class='robustness' data-score='0.6371134020618556'>0.64</td><td class='robustness group-sep' data-score='0.6371129291267305'>0.64</td><td>18.00</td><td class='robustness' data-score='0.3711340206185567'>0.37</td><td class='robustness group-sep' data-score='0.3711337451223673'>0.37</td><td class='group-sep' >0.54</td><td>0.54</td></tr>
-              <tr><td class='model group-sep' >RCx4 Fully123-LVIS-FT</td><td class='group-sep' >82.38</td><td>47.55</td><td class='robustness' data-score='0.5772032046613256'>0.58</td><td class='robustness group-sep' data-score='0.5772032046613256'>0.58</td><td>53.43</td><td class='robustness' data-score='0.6418789043728976'>0.64</td><td class='robustness group-sep' data-score='0.6418789043728976'>0.64</td><td>32.20</td><td class='robustness' data-score='0.3868332532436329'>0.39</td><td class='robustness group-sep' data-score='0.3868332532436329'>0.39</td><td class='group-sep' >0.54</td><td>0.54</td></tr>
-              <tr><td class='model group-sep' >MM-GDINO-T (O_G)</td><td class='group-sep' >50.40</td><td>29.20</td><td class='robustness' data-score='0.5793650793650793'>0.58</td><td class='robustness group-sep' data-score='0.5793649400854866'>0.58</td><td>32.70</td><td class='robustness' data-score='0.6488095238095238'>0.65</td><td class='robustness group-sep' data-score='0.6488093678354594'>0.65</td><td>18.90</td><td class='robustness' data-score='0.375'>0.38</td><td class='robustness group-sep' data-score='0.37499990984985265'>0.37</td><td class='group-sep' >0.53</td><td>0.53</td></tr>
-              <tr><td class='model group-sep' >MM-GDINO-T  (O_G_V)</td><td class='group-sep' >50.60</td><td>29.30</td><td class='robustness' data-score='0.5790513833992095'>0.58</td><td class='robustness group-sep' data-score='0.579051260084244'>0.58</td><td>32.55</td><td class='robustness' data-score='0.6437046802900461'>0.64</td><td class='robustness group-sep' data-score='0.6437045432064942'>0.64</td><td>19.00</td><td class='robustness' data-score='0.3757415952537904'>0.38</td><td class='robustness group-sep' data-score='0.3757415152357417'>0.38</td><td class='group-sep' >0.53</td><td>0.53</td></tr>
-              <tr><td class='model group-sep' >GLIP-T [5]</td><td class='group-sep' >46.60</td><td>26.20</td><td class='robustness' data-score='0.5622317596566524'>0.56</td><td class='robustness group-sep' data-score='0.5622305255967993'>0.56</td><td>29.55</td><td class='robustness' data-score='0.6336783645908679'>0.63</td><td class='robustness group-sep' data-score='0.6336769737106551'>0.63</td><td>18.05</td><td class='robustness' data-score='0.3870799093078667'>0.39</td><td class='robustness group-sep' data-score='0.3870790596942193'>0.39</td><td class='group-sep' >0.53</td><td>0.53</td></tr>
-              <tr><td class='model group-sep' >GLIP-T (C)</td><td class='group-sep' >46.70</td><td>25.70</td><td class='robustness' data-score='0.5503211991434689'>0.55</td><td class='robustness group-sep' data-score='0.5503200569878334'>0.55</td><td>29.92</td><td class='robustness' data-score='0.6404015754773525'>0.64</td><td class='robustness group-sep' data-score='0.6404002463657908'>0.64</td><td>18.14</td><td class='robustness' data-score='0.3882609812483946'>0.39</td><td class='robustness group-sep' data-score='0.388260175438136'>0.39</td><td class='group-sep' >0.53</td><td>0.53</td></tr>
-              <tr><td class='model group-sep' >RC-COCO-FT</td><td class='group-sep' >75.30</td><td>41.60</td><td class='robustness' data-score='0.552456839309429'>0.55</td><td class='robustness group-sep' data-score='0.5524568393094281'>0.55</td><td>46.47</td><td class='robustness' data-score='0.6169676048858206'>0.62</td><td class='robustness group-sep' data-score='0.6169676048858196'>0.62</td><td>27.84</td><td class='robustness' data-score='0.3696229421136485'>0.37</td><td class='robustness group-sep' data-score='0.3696229421136479'>0.37</td><td class='group-sep' >0.51</td><td>0.51</td></tr>
-              <tr><td class='model group-sep' >GLIP-T (B)</td><td class='group-sep' >44.90</td><td>22.30</td><td class='robustness' data-score='0.4966592427616927'>0.50</td><td class='robustness group-sep' data-score='0.4966564706775325'>0.50</td><td>27.57</td><td class='robustness' data-score='0.6141372743370717'>0.61</td><td class='robustness group-sep' data-score='0.6141338465538678'>0.61</td><td>15.81</td><td class='robustness' data-score='0.3520842846164983'>0.35</td><td class='robustness group-sep' data-score='0.3520823194718188'>0.35</td><td class='group-sep' >0.49</td><td>0.49</td></tr>
-              <tr><td class='model group-sep' >RC-LVIS-FT</td><td class='group-sep' >80.00</td><td>43.00</td><td class='robustness' data-score='0.5375'>0.54</td><td class='robustness group-sep' data-score='0.5375'>0.54</td><td>47.58</td><td class='robustness' data-score='0.59475'>0.59</td><td class='robustness group-sep' data-score='0.59475'>0.59</td><td>25.90</td><td class='robustness' data-score='0.32375'>0.32</td><td class='robustness group-sep' data-score='0.32375'>0.32</td><td class='group-sep' >0.49</td><td>0.49</td></tr>
-              <tr><td class='model group-sep' >GLEE-Lite-pretrain-Stage 1</td><td class='group-sep' >42.59</td><td>23.00</td><td class='robustness' data-score='0.5400328715660954'>0.54</td><td class='robustness group-sep' data-score='0.5400227371548199'>0.54</td><td>26.39</td><td class='robustness' data-score='0.6193515373583116'>0.62</td><td class='robustness group-sep' data-score='0.6193399144302748'>0.62</td><td>12.33</td><td class='robustness' data-score='0.2894691131699462'>0.29</td><td class='robustness group-sep' data-score='0.2894636809098027'>0.29</td><td class='group-sep' >0.48</td><td>0.48</td></tr>
-              <tr><td class='model group-sep' >GLEE-Lite-joint-Stage 2</td><td class='group-sep' >54.96</td><td>28.39</td><td class='robustness' data-score='0.5165574963609898'>0.52</td><td class='robustness group-sep' data-score='0.5165574894085854'>0.52</td><td>32.48</td><td class='robustness' data-score='0.5909384907187984'>0.59</td><td class='robustness group-sep' data-score='0.590938482765292'>0.59</td><td>14.72</td><td class='robustness' data-score='0.2677998480803082'>0.27</td><td class='robustness group-sep' data-score='0.26779984447596045'>0.27</td><td class='group-sep' >0.46</td><td>0.46</td></tr>
-              <tr><td class='model group-sep' >GLIP-T (A)</td><td class='group-sep' >42.90</td><td>20.20</td><td class='robustness' data-score='0.4708624708624709'>0.47</td><td class='robustness group-sep' data-score='0.47085493358275576'>0.47</td><td>25.40</td><td class='robustness' data-score='0.591748302251628'>0.59</td><td class='robustness group-sep' data-score='0.591738829905134'>0.59</td><td>12.79</td><td class='robustness' data-score='0.2979883283439528'>0.30</td><td class='robustness group-sep' data-score='0.29798355832824425'>0.30</td><td class='group-sep' >0.45</td><td>0.45</td></tr>
-              <tr><td class='model group-sep' >RegionCLIP R50x4 (RCx4)</td><td class='group-sep' >62.40</td><td>28.90</td><td class='robustness' data-score='0.4631410256410256'>0.46</td><td class='robustness group-sep' data-score='0.46314102560795195'>0.46</td><td>39.67</td><td class='robustness' data-score='0.6230563844824878'>0.62</td><td class='robustness group-sep' data-score='0.6230563844379943'>0.62</td><td>17.32</td><td class='robustness' data-score='0.2720276425318046'>0.27</td><td class='robustness group-sep' data-score='0.27202764251237865'>0.27</td><td class='group-sep' >0.45</td><td>0.45</td></tr>
-              <tr><td class='model group-sep' >GLEE-Lite-scaleup-Stage 3</td><td class='group-sep' >53.70</td><td>26.90</td><td class='robustness' data-score='0.5009310986964618'>0.50</td><td class='robustness group-sep' data-score='0.5009310833660413'>0.50</td><td>31.20</td><td class='robustness' data-score='0.5809329461806217'>0.58</td><td class='robustness group-sep' data-score='0.5809329284018366'>0.58</td><td>14.40</td><td class='robustness' data-score='0.2680989082703155'>0.27</td><td class='robustness group-sep' data-score='0.2680989000654566'>0.27</td><td class='group-sep' >0.45</td><td>0.45</td></tr>
-              <tr><td class='model group-sep' >YOLO-Worldv2-XL-640</td><td class='group-sep' >47.50</td><td>12.60</td><td class='robustness' data-score='0.2652631578947368'>0.27</td><td class='robustness group-sep' data-score='0.26526280761469995'>0.27</td><td>29.90</td><td class='robustness' data-score='0.6294736842105263'>0.63</td><td class='robustness group-sep' data-score='0.6294728529904389'>0.63</td><td>14.30</td><td class='robustness' data-score='0.3010526315789474'>0.30</td><td class='robustness group-sep' data-score='0.3010522340389056'>0.30</td><td class='group-sep' >0.40</td><td>0.40</td></tr>
-              <tr><td class='model group-sep' >YOLO-Worldv2-L (CLIP-L)🔥 -640</td><td class='group-sep' >46.00</td><td>11.70</td><td class='robustness' data-score='0.2543478260869565'>0.25</td><td class='robustness group-sep' data-score='0.2543470469293984'>0.25</td><td>28.20</td><td class='robustness' data-score='0.6125995655322231'>0.61</td><td class='robustness group-sep' data-score='0.6125976889225861'>0.61</td><td>12.90</td><td class='robustness' data-score='0.2802317161477191'>0.28</td><td class='robustness group-sep' data-score='0.2802308576986299'>0.28</td><td class='group-sep' >0.38</td><td>0.38</td></tr>
-              <tr><td class='model group-sep' >YOLO-Worldv2-X-640</td><td class='group-sep' >46.70</td><td>9.60</td><td class='robustness' data-score='0.2055674518201284'>0.21</td><td class='robustness group-sep' data-score='0.20556702517833458'>0.21</td><td>29.50</td><td class='robustness' data-score='0.631241084165478'>0.63</td><td class='robustness group-sep' data-score='0.6312397740659166'>0.63</td><td>14.50</td><td class='robustness' data-score='0.3102710413694722'>0.31</td><td class='robustness group-sep' data-score='0.31027039742223017'>0.31</td><td class='group-sep' >0.38</td><td>0.38</td></tr>
-              <tr><td class='model group-sep' >YOLO-Worldv2-L-640</td><td class='group-sep' >45.40</td><td>10.10</td><td class='robustness' data-score='0.2224669603524229'>0.22</td><td class='robustness group-sep' data-score='0.22246601332395322'>0.22</td><td>27.40</td><td class='robustness' data-score='0.6035242290748899'>0.60</td><td class='robustness group-sep' data-score='0.6035216599085464'>0.60</td><td>14.50</td><td class='robustness' data-score='0.3193832599118942'>0.32</td><td class='robustness group-sep' data-score='0.3193819003165665'>0.32</td><td class='group-sep' >0.38</td><td>0.38</td></tr>
-              <tr><td class='model group-sep' >YOLO-Worldv2-L-640-LITE</td><td class='group-sep' >45.10</td><td>8.50</td><td class='robustness' data-score='0.188470066518847'>0.19</td><td class='robustness group-sep' data-score='0.18846912226998735'>0.19</td><td>28.20</td><td class='robustness' data-score='0.6252771618625277'>0.63</td><td class='robustness group-sep' data-score='0.6252740291780756'>0.63</td><td>12.50</td><td class='robustness' data-score='0.2771618625277162'>0.28</td><td class='robustness group-sep' data-score='0.277160473926452'>0.28</td><td class='group-sep' >0.36</td><td>0.36</td></tr>
-              <tr><td class='model group-sep' >YOLO-Worldv2-M-640</td><td class='group-sep' >42.80</td><td>9.20</td><td class='robustness' data-score='0.2149532710280374'>0.21</td><td class='robustness group-sep' data-score='0.214949648631117'>0.21</td><td>24.40</td><td class='robustness' data-score='0.5700934579439253'>0.57</td><td class='robustness group-sep' data-score='0.5700838507173104'>0.57</td><td>11.30</td><td class='robustness' data-score='0.2640186915887851'>0.26</td><td class='robustness group-sep' data-score='0.2640142423403937'>0.26</td><td class='group-sep' >0.35</td><td>0.35</td></tr>
-              <tr><td class='model group-sep' >RegionCLIP R50 (RC)</td><td class='group-sep' >58.18</td><td>20.10</td><td class='robustness' data-score='0.3454795462358199'>0.35</td><td class='robustness group-sep' data-score='0.34547954571326767'>0.35</td><td>28.82</td><td class='robustness' data-score='0.4837193689157436'>0.48</td><td class='robustness group-sep' data-score='0.4837193681840979'>0.48</td><td>8.22</td><td class='robustness' data-score='0.1379657603222558'>0.14</td><td class='robustness group-sep' data-score='0.13796576011357684'>0.14</td><td class='group-sep' >0.32</td><td>0.32</td></tr>
-              <tr><td class='model group-sep' >YOLO-Worldv2-S-640</td><td class='group-sep' >37.50</td><td>5.30</td><td class='robustness' data-score='0.1413333333333333'>0.14</td><td class='robustness group-sep' data-score='0.14130272181220538'>0.14</td><td>20.30</td><td class='robustness' data-score='0.5413333333333333'>0.54</td><td class='robustness group-sep' data-score='0.5412160854316547'>0.54</td><td>6.80</td><td class='robustness' data-score='0.1813333333333333'>0.18</td><td class='robustness group-sep' data-score='0.18129405817415029'>0.18</td><td class='group-sep' >0.29</td><td>0.29</td></tr>
-            </tbody>
-            <div style="margin: 1%; display: flex; align-items: center; justify-content: center">
-              <button id="toggle-rows">
-                  Expand
-              </button>
-            </div>
-            <caption> Assuming random accuracy to be 0, we apply WAR metrics (alpha=60, Pathak et al., 2025) to nullify abnormally high robustness score from models like <strong>FIBER-B</strong>, which have a clean accuracy ≈ random. <b>Random predictions remain random after noise</b>, resulting in minimal drop, giving abnormally high robustness score.
-              Models ranked by average WAR robustness metrics across Pixelation, Motion Blur, and Turbulence perturbation. Higher the Intensity of color, greater is the robustness [0-1] against the respective noises.</caption>
-          </table>
+                </tr>
+                <tr>
+                  <th >AP</th>
+                  <th >RR</th>
+                  <th class="group-sep" >WAR</th>
+                  <th >AP</th>
+                  <th >RR</th>
+                  <th class="group-sep" >WAR</th>
+                  <th >AP</th>
+                  <th >RR</th>
+                  <th class="group-sep" >WAR</th>
+                </tr>
+              </thead>
+              <tbody>         
+            
+                <tr><td class='model group-sep' >GLEE-Plus-pretrain-Stage 1</td><td class='group-sep' >44.00</td><td>36.17</td><td class='robustness' data-score='0.8220454545454545'>0.82</td><td class='robustness group-sep' data-score='0.822038039204398'>0.82</td><td>36.89</td><td class='robustness' data-score='0.838593751598242'>0.84</td><td class='robustness group-sep' data-score='0.8385861869816608'>0.84</td><td>28.28</td><td class='robustness' data-score='0.6427370768281331'>0.64</td><td class='robustness group-sep' data-score='0.6427312789557551'>0.64</td><td class='group-sep' >0.77</td><td>0.77</td></tr>
+                <tr><td class='model group-sep' >GLEE-Pro-pretrain-Stage 1</td><td class='group-sep' >50.83</td><td>44.73</td><td class='robustness' data-score='0.8799921306315168'>0.88</td><td class='robustness group-sep' data-score='0.8799919677064922'>0.88</td><td>39.89</td><td class='robustness' data-score='0.7848511795269301'>0.78</td><td class='robustness group-sep' data-score='0.7848510342166559'>0.78</td><td>27.30</td><td class='robustness' data-score='0.5369970706102928'>0.54</td><td class='robustness group-sep' data-score='0.5369969711886526'>0.54</td><td class='group-sep' >0.73</td><td>0.73</td></tr>
+                <tr><td class='model group-sep' >GLEE-Pro-joint-Stage 2</td><td class='group-sep' >61.96</td><td>52.82</td><td class='robustness' data-score='0.8524854744996773'>0.85</td><td class='robustness group-sep' data-score='0.8524854744151417'>0.85</td><td>46.34</td><td class='robustness' data-score='0.7479885665035999'>0.75</td><td class='robustness group-sep' data-score='0.7479885664294266'>0.75</td><td>32.50</td><td class='robustness' data-score='0.5245891188105549'>0.52</td><td class='robustness group-sep' data-score='0.5245891187585348'>0.52</td><td class='group-sep' >0.71</td><td>0.71</td></tr>
+                <tr><td class='model group-sep' >GLEE-Pro-scaleup-Stage 3</td><td class='group-sep' >61.71</td><td>51.80</td><td class='robustness' data-score='0.8394101442229784'>0.84</td><td class='robustness group-sep' data-score='0.8394101441227731'>0.84</td><td>45.28</td><td class='robustness' data-score='0.7337184137753899'>0.73</td><td class='robustness group-sep' data-score='0.7337184136878017'>0.73</td><td>31.50</td><td class='robustness' data-score='0.5105140896823127'>0.51</td><td class='robustness group-sep' data-score='0.5105140896213697'>0.51</td><td class='group-sep' >0.69</td><td>0.69</td></tr>
+                <tr><td class='model group-sep' >MM-GDINO-L</td><td class='group-sep' >53.00</td><td>37.60</td><td class='robustness' data-score='0.7094339622641509'>0.71</td><td class='robustness group-sep' data-score='0.7094339282771551'>0.71</td><td>38.45</td><td class='robustness' data-score='0.7254716981132076'>0.73</td><td class='robustness group-sep' data-score='0.7254716633578888'>0.73</td><td>28.45</td><td class='robustness' data-score='0.5367924528301886'>0.54</td><td class='robustness group-sep' data-score='0.5367924271139645'>0.54</td><td class='group-sep' >0.66</td><td>0.66</td></tr>
+                <tr><td class='model group-sep' >GLEE-Plus-joint-Stage 2</td><td class='group-sep' >60.44</td><td>41.88</td><td class='robustness' data-score='0.6929185969556586'>0.69</td><td class='robustness group-sep' data-score='0.6929185967458457'>0.69</td><td>44.10</td><td class='robustness' data-score='0.7296811018736816'>0.73</td><td class='robustness group-sep' data-score='0.7296811016527371'>0.73</td><td>32.89</td><td class='robustness' data-score='0.5442139223228689'>0.54</td><td class='robustness group-sep' data-score='0.5442139221580831'>0.54</td><td class='group-sep' >0.66</td><td>0.66</td></tr>
+                <tr><td class='model group-sep' >GLEE-Plus-scaleup-Stage 3</td><td class='group-sep' >60.34</td><td>42.20</td><td class='robustness' data-score='0.6993702353331124'>0.70</td><td class='robustness group-sep' data-score='0.6993702351054298'>0.70</td><td>42.84</td><td class='robustness' data-score='0.7099200144509268'>0.71</td><td class='robustness group-sep' data-score='0.7099200142198097'>0.71</td><td>31.73</td><td class='robustness' data-score='0.525774272212707'>0.53</td><td class='robustness group-sep' data-score='0.5257742720415393'>0.53</td><td class='group-sep' >0.65</td><td>0.65</td></tr>
+                <tr><td class='model group-sep' >FIBER-B*-RefCOCOg</td><td class='group-sep' >22.70</td><td>15.60</td><td class='robustness' data-score='0.6872246696035242'>0.69</td><td class='robustness group-sep' data-score='0.6560089666264243'>0.66</td><td>17.22</td><td class='robustness' data-score='0.7590377380672466'>0.76</td><td class='robustness group-sep' data-score='0.7245600808644187'>0.72</td><td>13.06</td><td class='robustness' data-score='0.5757259581471902'>0.58</td><td class='robustness group-sep' data-score='0.5495748443984692'>0.55</td><td class='group-sep' >0.67</td><td>0.64</td></tr>
+                <tr><td class='model group-sep' >MM-GDINO-L* - ALL</td><td class='group-sep' >60.30</td><td>41.70</td><td class='robustness' data-score='0.691542288557214'>0.69</td><td class='robustness group-sep' data-score='0.691542288325466'>0.69</td><td>42.75</td><td class='robustness' data-score='0.7089552238805972'>0.71</td><td class='robustness group-sep' data-score='0.7089552236430139'>0.71</td><td>31.80</td><td class='robustness' data-score='0.5273631840796021'>0.53</td><td class='robustness group-sep' data-score='0.5273631839028735'>0.53</td><td class='group-sep' >0.64</td><td>0.64</td></tr>
+                <tr><td class='model group-sep' >MM-GDINO-B (O_G_V)</td><td class='group-sep' >52.50</td><td>35.70</td><td class='robustness' data-score='0.6799999999999999'>0.68</td><td class='robustness group-sep' data-score='0.6799999552941951'>0.68</td><td>38.15</td><td class='robustness' data-score='0.7266666666666667'>0.73</td><td class='robustness group-sep' data-score='0.7266666188928164'>0.73</td><td>27.25</td><td class='robustness' data-score='0.5190476190476191'>0.52</td><td class='robustness group-sep' data-score='0.5190475849234403'>0.52</td><td class='group-sep' >0.64</td><td>0.64</td></tr>
+                <tr><td class='model group-sep' >GLIP-L [7]</td><td class='group-sep' >51.23</td><td>34.20</td><td class='robustness' data-score='0.6675775912551241'>0.67</td><td class='robustness group-sep' data-score='0.6675774945091438'>0.67</td><td>36.06</td><td class='robustness' data-score='0.7039263719854384'>0.70</td><td class='robustness group-sep' data-score='0.7039262699717582'>0.70</td><td>26.36</td><td class='robustness' data-score='0.5145957974253619'>0.51</td><td class='robustness group-sep' data-score='0.5145957228496489'>0.51</td><td class='group-sep' >0.63</td><td>0.63</td></tr>
+                <tr><td class='model group-sep' >MM-GDINO-B* - ALL </td><td class='group-sep' >59.50</td><td>40.10</td><td class='robustness' data-score='0.6739495798319328'>0.67</td><td class='robustness group-sep' data-score='0.6739495794305478'>0.67</td><td>42.05</td><td class='robustness' data-score='0.7067226890756302'>0.71</td><td class='robustness group-sep' data-score='0.7067226886547264'>0.71</td><td>29.90</td><td class='robustness' data-score='0.5025210084033613'>0.50</td><td class='robustness group-sep' data-score='0.5025210081040743'>0.50</td><td class='group-sep' >0.63</td><td>0.63</td></tr>
+                <tr><td class='model group-sep' >FIBER-B*-LEVIS-FT</td><td class='group-sep' >50.70</td><td>31.70</td><td class='robustness' data-score='0.6252465483234714'>0.63</td><td class='robustness group-sep' data-score='0.6252464230227515'>0.63</td><td>35.60</td><td class='robustness' data-score='0.7019396990870072'>0.70</td><td class='robustness group-sep' data-score='0.701939558416819'>0.70</td><td>25.19</td><td class='robustness' data-score='0.4967825052419858'>0.50</td><td class='robustness group-sep' data-score='0.4967824056857297'>0.50</td><td class='group-sep' >0.61</td><td>0.61</td></tr>
+                <tr><td class='model group-sep' >FIBER-B*-COCO-FT</td><td class='group-sep' >58.40</td><td>36.60</td><td class='robustness' data-score='0.6267123287671234'>0.63</td><td class='robustness group-sep' data-score='0.6267123279543978'>0.63</td><td>39.66</td><td class='robustness' data-score='0.6790837324261226'>0.68</td><td class='robustness group-sep' data-score='0.6790837315454814'>0.68</td><td>28.40</td><td class='robustness' data-score='0.4862805313118974'>0.49</td><td class='robustness group-sep' data-score='0.4862805306812849'>0.49</td><td class='group-sep' >0.60</td><td>0.60</td></tr>
+                <tr><td class='model group-sep' >FIBER-B</td><td class='group-sep' >49.47</td><td>30.80</td><td class='robustness' data-score='0.622599555286032'>0.62</td><td class='robustness group-sep' data-score='0.6225992939704765'>0.62</td><td>33.53</td><td class='robustness' data-score='0.6777479820506946'>0.68</td><td class='robustness group-sep' data-score='0.6777476975884125'>0.68</td><td>23.09</td><td class='robustness' data-score='0.4667223652117667'>0.47</td><td class='robustness group-sep' data-score='0.4667221693205023'>0.47</td><td class='group-sep' >0.59</td><td>0.59</td></tr>
+                <tr><td class='model group-sep' >RCx4 Fully80-COCO-FT</td><td class='group-sep' >88.77</td><td>56.86</td><td class='robustness' data-score='0.6405317111636815'>0.64</td><td class='robustness group-sep' data-score='0.6405317111636815'>0.64</td><td>62.05</td><td class='robustness' data-score='0.6989974090345837'>0.70</td><td class='robustness group-sep' data-score='0.6989974090345837'>0.70</td><td>36.98</td><td class='robustness' data-score='0.416582178663963'>0.42</td><td class='robustness group-sep' data-score='0.416582178663963'>0.42</td><td class='group-sep' >0.59</td><td>0.59</td></tr>
+                <tr><td class='model group-sep' >RCx4-COCO-FT</td><td class='group-sep' >80.00</td><td>49.80</td><td class='robustness' data-score='0.6224999999999999'>0.62</td><td class='robustness group-sep' data-score='0.6224999999999999'>0.62</td><td>53.91</td><td class='robustness' data-score='0.673875'>0.67</td><td class='robustness group-sep' data-score='0.673875'>0.67</td><td>34.33</td><td class='robustness' data-score='0.429125'>0.43</td><td class='robustness group-sep' data-score='0.429125'>0.43</td><td class='group-sep' >0.58</td><td>0.58</td></tr>
+                <tr><td class='model group-sep' >FIBER-B*-RefCOCO+</td><td class='group-sep' >18.00</td><td>12.30</td><td class='robustness' data-score='0.6833333333333333'>0.68</td><td class='robustness group-sep' data-score='0.5855276405794322'>0.59</td><td>13.38</td><td class='robustness' data-score='0.7437346027747421'>0.74</td><td class='robustness group-sep' data-score='0.6372836592877696'>0.64</td><td>9.74</td><td class='robustness' data-score='0.5410191342360199'>0.54</td><td class='robustness group-sep' data-score='0.463582912942747'>0.46</td><td class='group-sep' >0.66</td><td>0.56</td></tr>
+                <tr><td class='model group-sep' >MM-GDINO-T (O_G_GR)</td><td class='group-sep' >50.50</td><td>30.60</td><td class='robustness' data-score='0.6059405940594059'>0.61</td><td class='robustness group-sep' data-score='0.6059404569481738'>0.61</td><td>33.00</td><td class='robustness' data-score='0.6534653465346535'>0.65</td><td class='robustness group-sep' data-score='0.6534651986695992'>0.65</td><td>19.20</td><td class='robustness' data-score='0.3801980198019802'>0.38</td><td class='robustness group-sep' data-score='0.38019793377140315'>0.38</td><td class='group-sep' >0.55</td><td>0.55</td></tr>
+                <tr><td class='model group-sep' >MM-GDINO-T (O_G_GR_V)</td><td class='group-sep' >50.40</td><td>30.10</td><td class='robustness' data-score='0.5972222222222222'>0.60</td><td class='robustness group-sep' data-score='0.5972220786497653'>0.60</td><td>33.13</td><td class='robustness' data-score='0.6574073412698413'>0.66</td><td class='robustness group-sep' data-score='0.6574071832288582'>0.66</td><td>19.20</td><td class='robustness' data-score='0.3809523809523809'>0.38</td><td class='robustness group-sep' data-score='0.3809522893712788'>0.38</td><td class='group-sep' >0.55</td><td>0.55</td></tr>
+                <tr><td class='model group-sep' >FIBER-B*-RefCOCO</td><td class='group-sep' >15.50</td><td>10.90</td><td class='robustness' data-score='0.7032258064516129'>0.70</td><td class='robustness group-sep' data-score='0.5368618255061164'>0.54</td><td>12.37</td><td class='robustness' data-score='0.7971590664890188'>0.80</td><td class='robustness group-sep' data-score='0.6085730468474969'>0.61</td><td>9.86</td><td class='robustness' data-score='0.6353419005458375'>0.64</td><td class='robustness group-sep' data-score='0.48503739398965484'>0.49</td><td class='group-sep' >0.71</td><td>0.54</td></tr>
+                <tr><td class='model group-sep' >RCx4-LVIS-FT</td><td class='group-sep' >82.70</td><td>47.80</td><td class='robustness' data-score='0.5779927448609431'>0.58</td><td class='robustness group-sep' data-score='0.5779927448609431'>0.58</td><td>53.39</td><td class='robustness' data-score='0.6396310051515515'>0.64</td><td class='robustness group-sep' data-score='0.6396310051515515'>0.64</td><td>33.49</td><td class='robustness' data-score='0.4012219959266803'>0.40</td><td class='robustness group-sep' data-score='0.4012219959266803'>0.40</td><td class='group-sep' >0.54</td><td>0.54</td></tr>
+                <tr><td class='model group-sep' >GDINO-T Swin-T (O_G_CAP4)</td><td class='group-sep' >48.50</td><td>29.30</td><td class='robustness' data-score='0.6041237113402061'>0.60</td><td class='robustness group-sep' data-score='0.6041232628936312'>0.60</td><td>30.90</td><td class='robustness' data-score='0.6371134020618556'>0.64</td><td class='robustness group-sep' data-score='0.6371129291267305'>0.64</td><td>18.00</td><td class='robustness' data-score='0.3711340206185567'>0.37</td><td class='robustness group-sep' data-score='0.3711337451223673'>0.37</td><td class='group-sep' >0.54</td><td>0.54</td></tr>
+                <tr><td class='model group-sep' >RCx4 Fully123-LVIS-FT</td><td class='group-sep' >82.38</td><td>47.55</td><td class='robustness' data-score='0.5772032046613256'>0.58</td><td class='robustness group-sep' data-score='0.5772032046613256'>0.58</td><td>53.43</td><td class='robustness' data-score='0.6418789043728976'>0.64</td><td class='robustness group-sep' data-score='0.6418789043728976'>0.64</td><td>32.20</td><td class='robustness' data-score='0.3868332532436329'>0.39</td><td class='robustness group-sep' data-score='0.3868332532436329'>0.39</td><td class='group-sep' >0.54</td><td>0.54</td></tr>
+                <tr><td class='model group-sep' >MM-GDINO-T (O_G)</td><td class='group-sep' >50.40</td><td>29.20</td><td class='robustness' data-score='0.5793650793650793'>0.58</td><td class='robustness group-sep' data-score='0.5793649400854866'>0.58</td><td>32.70</td><td class='robustness' data-score='0.6488095238095238'>0.65</td><td class='robustness group-sep' data-score='0.6488093678354594'>0.65</td><td>18.90</td><td class='robustness' data-score='0.375'>0.38</td><td class='robustness group-sep' data-score='0.37499990984985265'>0.37</td><td class='group-sep' >0.53</td><td>0.53</td></tr>
+                <tr><td class='model group-sep' >MM-GDINO-T  (O_G_V)</td><td class='group-sep' >50.60</td><td>29.30</td><td class='robustness' data-score='0.5790513833992095'>0.58</td><td class='robustness group-sep' data-score='0.579051260084244'>0.58</td><td>32.55</td><td class='robustness' data-score='0.6437046802900461'>0.64</td><td class='robustness group-sep' data-score='0.6437045432064942'>0.64</td><td>19.00</td><td class='robustness' data-score='0.3757415952537904'>0.38</td><td class='robustness group-sep' data-score='0.3757415152357417'>0.38</td><td class='group-sep' >0.53</td><td>0.53</td></tr>
+                <tr><td class='model group-sep' >GLIP-T [5]</td><td class='group-sep' >46.60</td><td>26.20</td><td class='robustness' data-score='0.5622317596566524'>0.56</td><td class='robustness group-sep' data-score='0.5622305255967993'>0.56</td><td>29.55</td><td class='robustness' data-score='0.6336783645908679'>0.63</td><td class='robustness group-sep' data-score='0.6336769737106551'>0.63</td><td>18.05</td><td class='robustness' data-score='0.3870799093078667'>0.39</td><td class='robustness group-sep' data-score='0.3870790596942193'>0.39</td><td class='group-sep' >0.53</td><td>0.53</td></tr>
+                <tr><td class='model group-sep' >GLIP-T (C)</td><td class='group-sep' >46.70</td><td>25.70</td><td class='robustness' data-score='0.5503211991434689'>0.55</td><td class='robustness group-sep' data-score='0.5503200569878334'>0.55</td><td>29.92</td><td class='robustness' data-score='0.6404015754773525'>0.64</td><td class='robustness group-sep' data-score='0.6404002463657908'>0.64</td><td>18.14</td><td class='robustness' data-score='0.3882609812483946'>0.39</td><td class='robustness group-sep' data-score='0.388260175438136'>0.39</td><td class='group-sep' >0.53</td><td>0.53</td></tr>
+                <tr><td class='model group-sep' >RC-COCO-FT</td><td class='group-sep' >75.30</td><td>41.60</td><td class='robustness' data-score='0.552456839309429'>0.55</td><td class='robustness group-sep' data-score='0.5524568393094281'>0.55</td><td>46.47</td><td class='robustness' data-score='0.6169676048858206'>0.62</td><td class='robustness group-sep' data-score='0.6169676048858196'>0.62</td><td>27.84</td><td class='robustness' data-score='0.3696229421136485'>0.37</td><td class='robustness group-sep' data-score='0.3696229421136479'>0.37</td><td class='group-sep' >0.51</td><td>0.51</td></tr>
+                <tr><td class='model group-sep' >GLIP-T (B)</td><td class='group-sep' >44.90</td><td>22.30</td><td class='robustness' data-score='0.4966592427616927'>0.50</td><td class='robustness group-sep' data-score='0.4966564706775325'>0.50</td><td>27.57</td><td class='robustness' data-score='0.6141372743370717'>0.61</td><td class='robustness group-sep' data-score='0.6141338465538678'>0.61</td><td>15.81</td><td class='robustness' data-score='0.3520842846164983'>0.35</td><td class='robustness group-sep' data-score='0.3520823194718188'>0.35</td><td class='group-sep' >0.49</td><td>0.49</td></tr>
+                <tr><td class='model group-sep' >RC-LVIS-FT</td><td class='group-sep' >80.00</td><td>43.00</td><td class='robustness' data-score='0.5375'>0.54</td><td class='robustness group-sep' data-score='0.5375'>0.54</td><td>47.58</td><td class='robustness' data-score='0.59475'>0.59</td><td class='robustness group-sep' data-score='0.59475'>0.59</td><td>25.90</td><td class='robustness' data-score='0.32375'>0.32</td><td class='robustness group-sep' data-score='0.32375'>0.32</td><td class='group-sep' >0.49</td><td>0.49</td></tr>
+                <tr><td class='model group-sep' >GLEE-Lite-pretrain-Stage 1</td><td class='group-sep' >42.59</td><td>23.00</td><td class='robustness' data-score='0.5400328715660954'>0.54</td><td class='robustness group-sep' data-score='0.5400227371548199'>0.54</td><td>26.39</td><td class='robustness' data-score='0.6193515373583116'>0.62</td><td class='robustness group-sep' data-score='0.6193399144302748'>0.62</td><td>12.33</td><td class='robustness' data-score='0.2894691131699462'>0.29</td><td class='robustness group-sep' data-score='0.2894636809098027'>0.29</td><td class='group-sep' >0.48</td><td>0.48</td></tr>
+                <tr><td class='model group-sep' >GLEE-Lite-joint-Stage 2</td><td class='group-sep' >54.96</td><td>28.39</td><td class='robustness' data-score='0.5165574963609898'>0.52</td><td class='robustness group-sep' data-score='0.5165574894085854'>0.52</td><td>32.48</td><td class='robustness' data-score='0.5909384907187984'>0.59</td><td class='robustness group-sep' data-score='0.590938482765292'>0.59</td><td>14.72</td><td class='robustness' data-score='0.2677998480803082'>0.27</td><td class='robustness group-sep' data-score='0.26779984447596045'>0.27</td><td class='group-sep' >0.46</td><td>0.46</td></tr>
+                <tr><td class='model group-sep' >GLIP-T (A)</td><td class='group-sep' >42.90</td><td>20.20</td><td class='robustness' data-score='0.4708624708624709'>0.47</td><td class='robustness group-sep' data-score='0.47085493358275576'>0.47</td><td>25.40</td><td class='robustness' data-score='0.591748302251628'>0.59</td><td class='robustness group-sep' data-score='0.591738829905134'>0.59</td><td>12.79</td><td class='robustness' data-score='0.2979883283439528'>0.30</td><td class='robustness group-sep' data-score='0.29798355832824425'>0.30</td><td class='group-sep' >0.45</td><td>0.45</td></tr>
+                <tr><td class='model group-sep' >RegionCLIP R50x4 (RCx4)</td><td class='group-sep' >62.40</td><td>28.90</td><td class='robustness' data-score='0.4631410256410256'>0.46</td><td class='robustness group-sep' data-score='0.46314102560795195'>0.46</td><td>39.67</td><td class='robustness' data-score='0.6230563844824878'>0.62</td><td class='robustness group-sep' data-score='0.6230563844379943'>0.62</td><td>17.32</td><td class='robustness' data-score='0.2720276425318046'>0.27</td><td class='robustness group-sep' data-score='0.27202764251237865'>0.27</td><td class='group-sep' >0.45</td><td>0.45</td></tr>
+                <tr><td class='model group-sep' >GLEE-Lite-scaleup-Stage 3</td><td class='group-sep' >53.70</td><td>26.90</td><td class='robustness' data-score='0.5009310986964618'>0.50</td><td class='robustness group-sep' data-score='0.5009310833660413'>0.50</td><td>31.20</td><td class='robustness' data-score='0.5809329461806217'>0.58</td><td class='robustness group-sep' data-score='0.5809329284018366'>0.58</td><td>14.40</td><td class='robustness' data-score='0.2680989082703155'>0.27</td><td class='robustness group-sep' data-score='0.2680989000654566'>0.27</td><td class='group-sep' >0.45</td><td>0.45</td></tr>
+                <tr><td class='model group-sep' >YOLO-Worldv2-XL-640</td><td class='group-sep' >47.50</td><td>12.60</td><td class='robustness' data-score='0.2652631578947368'>0.27</td><td class='robustness group-sep' data-score='0.26526280761469995'>0.27</td><td>29.90</td><td class='robustness' data-score='0.6294736842105263'>0.63</td><td class='robustness group-sep' data-score='0.6294728529904389'>0.63</td><td>14.30</td><td class='robustness' data-score='0.3010526315789474'>0.30</td><td class='robustness group-sep' data-score='0.3010522340389056'>0.30</td><td class='group-sep' >0.40</td><td>0.40</td></tr>
+                <tr><td class='model group-sep' >YOLO-Worldv2-L (CLIP-L)🔥 -640</td><td class='group-sep' >46.00</td><td>11.70</td><td class='robustness' data-score='0.2543478260869565'>0.25</td><td class='robustness group-sep' data-score='0.2543470469293984'>0.25</td><td>28.20</td><td class='robustness' data-score='0.6125995655322231'>0.61</td><td class='robustness group-sep' data-score='0.6125976889225861'>0.61</td><td>12.90</td><td class='robustness' data-score='0.2802317161477191'>0.28</td><td class='robustness group-sep' data-score='0.2802308576986299'>0.28</td><td class='group-sep' >0.38</td><td>0.38</td></tr>
+                <tr><td class='model group-sep' >YOLO-Worldv2-X-640</td><td class='group-sep' >46.70</td><td>9.60</td><td class='robustness' data-score='0.2055674518201284'>0.21</td><td class='robustness group-sep' data-score='0.20556702517833458'>0.21</td><td>29.50</td><td class='robustness' data-score='0.631241084165478'>0.63</td><td class='robustness group-sep' data-score='0.6312397740659166'>0.63</td><td>14.50</td><td class='robustness' data-score='0.3102710413694722'>0.31</td><td class='robustness group-sep' data-score='0.31027039742223017'>0.31</td><td class='group-sep' >0.38</td><td>0.38</td></tr>
+                <tr><td class='model group-sep' >YOLO-Worldv2-L-640</td><td class='group-sep' >45.40</td><td>10.10</td><td class='robustness' data-score='0.2224669603524229'>0.22</td><td class='robustness group-sep' data-score='0.22246601332395322'>0.22</td><td>27.40</td><td class='robustness' data-score='0.6035242290748899'>0.60</td><td class='robustness group-sep' data-score='0.6035216599085464'>0.60</td><td>14.50</td><td class='robustness' data-score='0.3193832599118942'>0.32</td><td class='robustness group-sep' data-score='0.3193819003165665'>0.32</td><td class='group-sep' >0.38</td><td>0.38</td></tr>
+                <tr><td class='model group-sep' >YOLO-Worldv2-L-640-LITE</td><td class='group-sep' >45.10</td><td>8.50</td><td class='robustness' data-score='0.188470066518847'>0.19</td><td class='robustness group-sep' data-score='0.18846912226998735'>0.19</td><td>28.20</td><td class='robustness' data-score='0.6252771618625277'>0.63</td><td class='robustness group-sep' data-score='0.6252740291780756'>0.63</td><td>12.50</td><td class='robustness' data-score='0.2771618625277162'>0.28</td><td class='robustness group-sep' data-score='0.277160473926452'>0.28</td><td class='group-sep' >0.36</td><td>0.36</td></tr>
+                <tr><td class='model group-sep' >YOLO-Worldv2-M-640</td><td class='group-sep' >42.80</td><td>9.20</td><td class='robustness' data-score='0.2149532710280374'>0.21</td><td class='robustness group-sep' data-score='0.214949648631117'>0.21</td><td>24.40</td><td class='robustness' data-score='0.5700934579439253'>0.57</td><td class='robustness group-sep' data-score='0.5700838507173104'>0.57</td><td>11.30</td><td class='robustness' data-score='0.2640186915887851'>0.26</td><td class='robustness group-sep' data-score='0.2640142423403937'>0.26</td><td class='group-sep' >0.35</td><td>0.35</td></tr>
+                <tr><td class='model group-sep' >RegionCLIP R50 (RC)</td><td class='group-sep' >58.18</td><td>20.10</td><td class='robustness' data-score='0.3454795462358199'>0.35</td><td class='robustness group-sep' data-score='0.34547954571326767'>0.35</td><td>28.82</td><td class='robustness' data-score='0.4837193689157436'>0.48</td><td class='robustness group-sep' data-score='0.4837193681840979'>0.48</td><td>8.22</td><td class='robustness' data-score='0.1379657603222558'>0.14</td><td class='robustness group-sep' data-score='0.13796576011357684'>0.14</td><td class='group-sep' >0.32</td><td>0.32</td></tr>
+                <tr><td class='model group-sep' >YOLO-Worldv2-S-640</td><td class='group-sep' >37.50</td><td>5.30</td><td class='robustness' data-score='0.1413333333333333'>0.14</td><td class='robustness group-sep' data-score='0.14130272181220538'>0.14</td><td>20.30</td><td class='robustness' data-score='0.5413333333333333'>0.54</td><td class='robustness group-sep' data-score='0.5412160854316547'>0.54</td><td>6.80</td><td class='robustness' data-score='0.1813333333333333'>0.18</td><td class='robustness group-sep' data-score='0.18129405817415029'>0.18</td><td class='group-sep' >0.29</td><td>0.29</td></tr>
+              </tbody>
+              <div style="margin: 1%; display: flex; align-items: center; justify-content: center">
+                <button id="toggle-rows">
+                    Expand
+                </button>
+              </div>
+              <caption> Assuming random accuracy to be 0, we apply WAR metrics (alpha=60, Pathak et al., 2025) to nullify abnormally high robustness score from models like <strong>FIBER-B</strong>, which have a clean accuracy ≈ random. <b>Random predictions remain random after noise</b>, resulting in minimal drop, giving abnormally high robustness score.
+                Models ranked by average WAR robustness metrics across Pixelation, Motion Blur, and Turbulence perturbation. Higher the Intensity of color, greater is the robustness [0-1] against the respective noises.</caption>
+            </table>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
 <!-- Teaser-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <br><br>
-        <img src="static/images/overview.jpg" alt="Teaser Figure" style="max-width: 100%; height: auto;">
-        <div class="figure-caption">
-          <strong>Effect of Noise Degradation:</strong> Performance of GLIP (above) & MM-GDINO (bottom) on COCO for noises like turbulence, pixelation, and motion blur. This figure shows the impact of real-world noise on object detection performance of these models.
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <br><br>
+          <img src="static/images/overview.jpg" alt="Teaser Figure" style="max-width: 100%; height: auto;">
+          <div class="figure-caption">
+            <strong>Effect of Noise Degradation:</strong> Performance of GLIP (above) & MM-GDINO (bottom) on COCO for noises like turbulence, pixelation, and motion blur. This figure shows the impact of real-world noise on object detection performance of these models.
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 <!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract 📖</h2>
-        <div class="content has-text-justified">
-          <p>
-            The impact of real-world noise on Open Vocabulary Object Detectors (OV-ODs) remains poorly understood due to their architectural complexity.
-            We present our comprehensive analysis Robust Onion, an empirical study that uses controlled
-            synthetic visual degradations to peel OV-ODs layer-by-layer, revealing how, why, and where robustness degrades, systematically analyzing feature collapse.
-            Our findings reveal that models with similar vision backbones exhibit comparable robustness, driven by similar feature collapse at similar layers, while factors such as pretraining strategy, architectural nuances, and caption supervision contribute little. Robustness is primarily governed by the image domain rather than annotations, explaining the similar robustness impact on COCO and LVIS, and why datasets like ODinW-13 can give an inflated impression of robustness due to large, isolated objects.
-            Finally, we validate our insights by improving robustness on real-world BDD-100K and other autonomous driving datasets via our NN & TK0 approach, using 96× fewer trainable parameters than end-to-end training,
-            while also explaining reported robustness observations from prior works.
-          </p>
+ <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Abstract  📖</h2>
+      </div>
+    </div>
+  </section>
+  <section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <p>
+              The impact of real-world noise on <u><b>O</b></u>pen <u><b>V</b></u>ocabulary <u><b>O</b></u>bject <u><b>D</b></u>etectors (OV-ODs) remains poorly understood due to their architectural complexity.
+              We present our comprehensive analysis <b>Robust Onion</b>, an empirical study that uses controlled
+              synthetic visual degradations to <i>peel</i> OV-ODs layer-by-layer, revealing <i>how, why</i>, and <i>where</i> robustness degrades, systematically analyzing <i>feature collapse</i>.
+              Our findings reveal that models with similar vision backbones exhibit comparable robustness, driven by similar feature collapse at similar layers, while factors such as pretraining strategy, architectural nuances, and caption supervision contribute little. Robustness is primarily governed by the image domain rather than annotations, explaining the similar robustness impact on COCO and LVIS, and why datasets like ODinW-13 can give an impression of inflated robustness due to large, isolated objects.
+              Finally, we validate our insights by <i>improving robustness</i> on real-world BDD-100K, WiderFace, VisDRONE via our lightweight plug-and-play <u><b>NN & TK0</b></u> approach, using 
+              96x fewer trainable parameters than end-to-end training.
+              We also <u><b>explain prior works</b></u> robustness observations.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
 <!-- Basic Setup -->
-<section class="section hero">
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Setup 🔨</h2>
+      </div>
+    </div>
+  </section>
+  <section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Setup 🔨</h2>
+        <!-- <h2 class="title is-3">Setup 🔨</h2> -->
         <div class="content has-text-justified">
           <img src="static/images/basic.jpg" alt="Architecture">
           <div class="figure-caption"> <b>Analysis of VLM architecture towards robustness:</b> The detailed analysis of VLM architecture layer by layer (peeling layers) to understand the impact of real-world noise on object detection performance. (1) <i>WHERE: Model-Based Analysis</i> examines overall detector size, backbone, pretraining, and fine-tuning. (2) <i>WHY: Insight into Transformers</i> peels the backbone, enhancer, and fusion to localize feature collapse layer-by-layer. (3) <i>WHAT: Robustness as a function of Dataset</i> studies image-domain factors — object size, count, occlusion, and class. (4) <i>WHERE: Captions & Prompt Engineering</i> evaluates caption expressiveness, prompt rewording, and superclass grouping. Image modified from GLIP.</div>
@@ -313,11 +326,11 @@
       </div>
     </div>
   </div>
-</section>
+  </section>
  
 
 <!-- ANALYSIS - PARENT HEADER -->
-<section class="section hero">
+<section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -332,15 +345,13 @@
 
 
 <!-- 1. MODEL-BASED ANALYSIS -->
-<section class="hero is-small is-light">
+<section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">1. WHERE: Model-Based Analysis 🥸</h2>
-      <p style="display: flex; align-items: center; gap: 12px;">
+      <h2 class="title is-3">1. WHERE: Model-Based Analysis 🥸 (
         <span style="font-size: 40px; line-height: 1;">🔬</span>
-        <span style="font-size: 20px;"><b>Click on the figures to enlarge</b></span>
-      </p>
-      <br>
+        Click to enlarge)
+      </h2>
       <div class="container has-text-centered">
         <div class="figure-grid4_2">
           
@@ -355,7 +366,6 @@
                <b>(a) Size and Robustness correlation</b> Strong +ve correlation between robustness & overall detector size. Fine-tuned models shown as <span style="font-size: 10px;">★</span>.
             </div>
           </div>
-
           <div class="figure-item">
             <div class="img-click-wrapper">
               <img src="static/images/backbones_noise2.jpg" alt="Shuffle E Reconstruction">
@@ -367,7 +377,6 @@
               <b> (b) Similar Robustness for similar backbones</b> Depth is the deciding factor with overall size playing minimal role.
             </div>
           </div>
-
           <div class="figure-item">
             <div class="img-click-wrapper">
               <img src="static/images/pretraining_noise.jpg" alt="Shuffle E Reconstruction">
@@ -379,7 +388,6 @@
                <b>(c) Robustness weak correlation with pretraining</b>  Robustness remains consistent regardless of pretraining dataset size.
             </div>
           </div>
-
           <div class="figure-item">
             <div class="img-click-wrapper">
               <img src="static/images/finetune.jpg" alt="Shuffle E Reconstruction">
@@ -388,38 +396,39 @@
               </div>
             </div>
             <div class="figure-caption">
-              <b>(d) No clear correlation of Finetuning with Robustness </b> Region CLIP improves, FIBER-B suffers.
+              <b>(d) No clear correlation of Finetuning with Robustness.</b>
             </div>
           </div>
+
         </div>
         
         <h4 class="blink">Takeaway</h4>
-      <div class="content has-text-justified">
-        <ul>
-          <li>Model size positively correlates with robustness (a), with <strong> backbone being the deciding factor</strong>. 
-          <li><strong>Similar backbones have similar robustness (b)</strong>, other bells and whistles like different architectural design, neck, vision-text fusion network, different losses and pretraining strategies / data hardly playing any major role. </li> General overall trend is  ResNet < Swin-T (12 blocks, 27M) < Swin-B (12 blocks, 87M) ≤ Swin-L (24 blocks 195M) ≃
-EVA-02 (24 blocks 303M).
-          <li><strong>Robustness is not simply learned from more data (c)</strong>. Models trained on very different amounts of data can have similar robustness. Hence robustness techniques should emphasize <strong>noise-robust training, without relying on pretraining and fine-tuning.</strong> </li>
-          <li><strong>Finetuning shows no clear correlation with robustness</strong> while it helps RegionCLIP, it hurts FIBER-B.</li>
-          <li> Swin-B (87 M) can be an amazing alternative to EVA-02 (303 M) because of their similar robustness. </li>
-          <li> COCO and LVIS (same images, different annotations) imparts similar robustness, i.e. <strong>domain of images is more important than annotation.</strong> </li>
-        </ul>
-      </div>
-      </div>
+          <div class="content has-text-justified">
+            <ul>
+              <!-- <li> Model size positively correlates with robustness (a)</li> -->
+              <li><strong>(b):</strong> <b>Similar backbones have similar robustness (b)</b>, other bells and whistles like different architectural design, neck, vision-text fusion network, different losses and pretraining strategies / data hardly playing any major role. </li> General overall trend is  ResNet < Swin-T (12 blocks, 27M) < Swin-B (12 blocks, 87M) ≤ Swin-L (24 blocks 195M) ≃
+    EVA-02 (24 blocks 303M).
+              <li><strong>(c):</strong> <b>Robustness is not simply learned from more data</b>. Models trained on very different amounts of data can have similar robustness. Hence robustness techniques should emphasize <b>noise-robust training, without relying on pretraining and fine-tuning.</b> </li>
+              <!-- <li><strong>Finetuning shows no clear correlation with robustness</strong> while it helps RegionCLIP, it hurts FIBER-B.</li> -->
+              <li><strong>(d):</strong> COCO and LVIS (same images, different annotations) imparts similar robustness, i.e. <b>domain of images is more important than annotation.</b> </li>
+            </ul>
+          </div>
+      </div> 
     </div>
   </div>
 </section>
+
+
 
 
 <!-- 2. DEEPER INSIGHT INTO TRANSFORMERS -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">2. WHY: Insight into Transformers (GLIP, MM-GDINO & GLEE) 🤯</h2>
-      <p style="display: flex; align-items: center; gap: 12px;">
-        <span style="font-size: 40px; line-height: 1;">🔬</span>
-        <span style="font-size: 20px;"><b>Click on the figures to enlarge</b></span>
-      </p>
+      <h2 class="title is-3">2. WHY: Insight into Transformers 🤯 
+        (<span style="font-size: 40px; line-height: 1;">🔬</span>
+        Click to enlarge)
+      </h2>
       <br>
       <div class="container has-text-centered">
         <div class="figure-grid3">
@@ -458,26 +467,27 @@ EVA-02 (24 blocks 303M).
       <h4 class="blink">Takeaway</h4>
       <div class="content has-text-justified">
         <ul>
-          <li>Early layers are more vulnerable to noise, as indicated by <b>distinct cluster or lumps of features</b> at shallow layers.</li>
-          <li>Same depth (2 and 4 blocks), i.e. layer #1 and layer #2, have <b>similar feature collapse (lumps) across all models, despite architectural differences</b>.</li>
-          <li><b>Model depth, not necessarily size, determines feature collapse</b>, indicated by MM-GDINO-L (24 blocks) layer #3 (22nd block) and layer #4 (24th block) collapse are similar to GLEE-Pro-joint (24 blocks). While MM-GDINO-L is considerably different from Swin-T (12 blocks) at layer #3 (10th block) and layer #4 (12th block).</li>
-          <li>Feature enhancer serves no utility in robustness.</li>
-          <li>Fusion layer <b>cross exchange information between spatial tokens of all layers 192 × 192, 96 × 96, 48 × 48, 24 × 24, inducing robustness in the last layer</b> (24 × 24), as evidenced by the significant overlap between features of sev 5 and sev 0 for all models.</li>          
+          <li><strong>Layer #1 & #2</strong>: Early layers are more vulnerable to noise, as indicated by <b>distinct cluster or lumps of features</b> at shallow layers.</li>
+          <li><strong>Layer #1 & #2</strong>: Same depth (2 and 4 blocks) have <b>similar feature collapse (lumps) across all models</b>, despite architectural differences.</li>
+          <li><strong>Layer #3 & #4</strong>: <b>Model depth, not necessarily size, determines feature collapse</b>, indicated by MM-GDINO-L (24 blocks) layer #3 (22nd block) and layer #4 (24th block) collapse are similar to GLEE-Pro-joint (24 blocks). While MM-GDINO-L is considerably different from Swin-T (12 blocks) at layer #3 (10th block) and layer #4 (12th block).</li>
+          <li><strong>Enhancer #4</strong>: Feature enhancer serves no utility in robustness.</li>
+          <li><strong>Fusion #4</strong>: Fusion layer <b>cross exchange information between spatial tokens of all layers 192 × 192, 96 × 96, 48 × 48, 24 × 24, inducing robustness in the last layer</b> (24 × 24), as evidenced by the significant overlap between features of sev 5 and sev 0 for all models.</li>          
         </ul>
       </div>
     </div>
   </div>
 </section>
 
+
 <!-- 3. Robustness because of input image? -->
-<section class="hero is-small is-light">
+ <!-- <br><br> -->
+<section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">3. WHAT: Robustness as a function of Dataset 😨</h2>
-      <p style="display: flex; align-items: center; gap: 12px;">
-        <span style="font-size: 40px; line-height: 1;">🔬</span>
-        <span style="font-size: 20px;"><b>Click on the figures to enlarge</b></span>
-      </p>
+      <h2 class="title is-3">3. WHAT: Robustness as a function of Dataset 😨
+        (<span style="font-size: 40px; line-height: 1;">🔬</span>
+        Click to enlarge)
+      </h2>
       <br>
       <div class="container has-text-centered">
         <div class="figure-grid3">
@@ -490,7 +500,7 @@ EVA-02 (24 blocks 303M).
               </div>
             </div>
             <div class="figure-caption">
-              <b>(a) No of objects:</b> Models are very robust when the # of objects in an image is < 3, with unpredictable jumps after 25+ objects, likely due to very few samples in that range.
+              <b>Models are very robust when the # of objects in an image is < 3</b>, with unpredictable jumps after 25+ objects, likely due to very few samples in that range.
             </div>
           </div>
 
@@ -522,11 +532,11 @@ EVA-02 (24 blocks 303M).
         <h4 class="blink">Takeaway</h4>
       <div class="content has-text-justified">
         <ul>
-          <li><strong>Larger objects (≥ 96 × 96 size) are significantly more robust to noise</strong>.</li>
-          <li> <strong>All detectors are highly robust when there are only a few objects to be detected (≤ 3) (a)</strong>. As the number of objects/images goes above 3, robustness starts to see a drop.</li>
-          <li>Datasets like ODinW-13, majorly dominated by singular and large objects, are significantly more robust than LVIS & COCO, which have a higher proportion of smaller objects and more objects on average.</li>
-          <li>COCO and LVIS exhibit nearly identical robustness despite vastly different label spaces, because they <strong>share the same underlying images (b)</strong> </li>
-          <li> Class-wise robustness <strong>correlates moderately with average object size</strong>, but shows <strong>almost no correlation with class frequency</strong> (c). This in turn partially explains why LVIS (long-tail distribution) has similar robustness to COCO. </li>
+          <!-- <li><b>Larger objects (≥ 96 × 96 size) are significantly more robust to noise</b>.</li> -->
+          <!-- <li> <b>All detectors are highly robust when there are only a few objects to be detected (≤ 3) (a)</b>. As the number of objects/images goes above 3, robustness starts to see a drop.</li> -->
+          <li><strong>(b):</strong> like ODinW-13, majorly dominated by <b>singular and large objects, are significantly more robust</b> than LVIS & COCO, which have a higher proportion of smaller objects and more objects on average.</li>
+          <li><strong>(b):</strong> COCO and LVIS exhibit nearly identical robustness despite vastly different annotations, because they <b>share the same underlying images</b> </li>
+          <li><strong>(c):</strong> Class-wise robustness <b>correlates moderately with average object size</b>, but shows <b>almost no correlation with class frequency</b>. This in turn partially explains why LVIS (long-tail distribution) has similar robustness to COCO. </li>
         </ul>
       </div>
       </div>
@@ -535,14 +545,14 @@ EVA-02 (24 blocks 303M).
 </section>
 
 <!-- 4. Role of Language -->
+ <br><br>
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">4. WHERE: Expressiveness of Captions & Prompt Engineering 🤔</h2>
-      <p style="display: flex; align-items: center; gap: 12px;">
-        <span style="font-size: 40px; line-height: 1;">🔬</span>
-        <span style="font-size: 20px;"><b>Click on the figures to enlarge</b></span>
-      </p>
+      <h2 class="title is-3">4. WHERE: Captions & Prompt Engineering 🤔
+        (<span style="font-size: 40px; line-height: 1;">🔬</span>
+        Click to enlarge)
+      </h2>
       <br>
       <div class="container has-text-centered">
         <div class="figure-grid3">
@@ -555,7 +565,7 @@ EVA-02 (24 blocks 303M).
               </div>
             </div>
             <div class="figure-caption">
-              <b>(a) Training Captions descriptiveness limited impact on Robustness </b> Despite training on captions with different degrees of expressiveness (RefCOCOg is most descriptive), robustness varies slightly (FIBER-B).
+              <b>(a) Caption expressiveness during training has minimal impact on robustness</b> Despite training on captions with different degrees of expressiveness (RefCOCOg is most descriptive), robustness varies slightly (FIBER-B).
             </div>
           </div>
 
@@ -587,10 +597,11 @@ EVA-02 (24 blocks 303M).
         <h4 class="blink">Takeaway</h4>
         <div class="content has-text-justified">
         <ul>
-          <li>Caption expressiveness during training has <strong>minimal impact on robustness</strong>, as models fine-tuned on simple (RefCOCO), appearance-based (RefCOCO+), or highly descriptive captions (RefCOCOg) show <strong>nearly identical robustness</strong> under noise. Indicating that <strong>robustness depends fundamentally on visual features, not semantic</strong> (a).</li>
-          <li>Injecting perturbation context into test prompts (captions) <strong>does not meaningfully impact robustness</strong>, showing that <strong>language cannot compensate for corrupted visual representations</strong> caused by noise (b).</li>
-          <li>Rewording class labels or grouping classes into supercategories <strong>does not impact robustness</strong> as such (c).</li>
-          <li>Efforts to improve OV-OD robustness should <strong>prioritize the vision backbone and feature learning</strong>, rather than relying on caption richness, prompt tuning, or linguistic augmentation</li>
+          <!-- <li>Caption expressiveness during training has <strong>minimal impact on robustness</strong>, as models fine-tuned on simple (RefCOCO), appearance-based (RefCOCO+), or highly descriptive captions (RefCOCOg) show <strong>nearly identical robustness</strong> under noise.  -->
+          <!-- <li>Indicating that <strong>robustness depends fundamentally on visual features, not semantic</strong> (a).</li> -->
+          <li><strong>(b):</strong>Injecting perturbation context into test prompts (captions) <b>does not meaningfully impact robustness</b>, showing that <b>language cannot compensate for corrupted visual representations</strong> caused by noise (b).</li>
+          <li>Rewording class labels or grouping classes into supercategories <b>does not impact robustness</b> as such (c).</li>
+          <li>Efforts to improve OV-OD robustness should <b>prioritize the vision backbone and feature learning</b>, rather than relying on caption richness, prompt tuning, or linguistic augmentation</li>
         </ul>
       </div>
       </div>
@@ -602,11 +613,20 @@ EVA-02 (24 blocks 303M).
 
 
 <!-- METHOD (SGI) -->
-<section class="section hero is-light">
+ <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Validating Model Design (TK0 &amp; NN) on Real-World Datasets  🔧</h2>
+        <h2 class="title is-3">Validating Model Design (TK0 &amp; NN) on Real-World Datasets 🔧</h2>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- <h2 class="title is-3">Validating Model Design (TK0 &amp; NN) on Real-World Datasets  🔧</h2> -->
         <div class="content has-text-justified">
           <p>Our model-based and transformer-level analyses above highlight three key design principles: (1) the <b>vision backbone</b> is the primary determinant of robustness, (2) <b>shallow layers</b> are most adversely affected by noise, and (3) <b>cross-exchanging information</b> across backbone layers improves feature overlap across severities. We validate these insights with two lightweight modules added on top of a frozen GLIP-T trained on BDD-100K.</p>
           <ul>
@@ -629,11 +649,20 @@ EVA-02 (24 blocks 303M).
 
 <!-- End image carousel -->
 
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Real-World Validation</h2>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Real-World Validation on Driving Datasets 🚗</h2>
+        <h2 class="title is-3">Driving Datasets 🚗</h2>
         <div class="content has-text-justified">
           <p>BDD-100K trained GLIP-T zero-shot evaluation on DAWN, Foggy Cityscapes (Fog City), Virtual KITTI 2, and COCO. <b>E2E</b> and <b>Fuse</b> are training baselines (training pretrained weights). <b>PC</b>=Partly Cloudy; <b>O</b>=Overcast; <b>S</b>=Snow; <b>R</b>=Rain; <b>F</b>=Fog; <b>Sa</b>=Sand; <b>All</b>=Overall across all categories. The second row per model shows <span style="color: #1a7f37;">↑</span>/<span style="color: #cf222e;">↓</span> change relative to vanilla zero-shot.</p>
           <!-- <div class="figure-grid4" style="gap: 80px; margin-top: -1px"> -->
@@ -769,7 +798,7 @@ EVA-02 (24 blocks 303M).
       url             ={},
       }</code></pre>
     </div>
-</section>extend sec 5.126
+</section>
 <!--End BibTex citation -->
 
 
