@@ -545,7 +545,7 @@
 </section>
 
 <!-- 4. Role of Language -->
- <br><br>
+ <!-- <br><br> -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
@@ -590,6 +590,7 @@
             </div>
             <div class="figure-caption">
               <b>(c) Robustness for Finegrained vs Superclass Captions</b> Similar robustness for ODinW13 finegrained vs superclass captions for pixelation (GLIP-T). Language is not the primary driver for robustness.
+              Rewording class labels or grouping classes into supercategories does not impact robustness.
             </div>
           </div>
 
@@ -599,8 +600,8 @@
         <ul>
           <!-- <li>Caption expressiveness during training has <strong>minimal impact on robustness</strong>, as models fine-tuned on simple (RefCOCO), appearance-based (RefCOCO+), or highly descriptive captions (RefCOCOg) show <strong>nearly identical robustness</strong> under noise.  -->
           <!-- <li>Indicating that <strong>robustness depends fundamentally on visual features, not semantic</strong> (a).</li> -->
-          <li><strong>(b):</strong>Injecting perturbation context into test prompts (captions) <b>does not meaningfully impact robustness</b>, showing that <b>language cannot compensate for corrupted visual representations</strong> caused by noise (b).</li>
-          <li>Rewording class labels or grouping classes into supercategories <b>does not impact robustness</b> as such (c).</li>
+          <li><strong>(b):</strong> Injecting perturbation context into test prompts (captions) <b>does not meaningfully impact robustness</b>, showing that <b>language cannot compensate for corrupted visual representations</b> caused by noise.</li>
+          <!-- <li>Rewording class labels or grouping classes into supercategories <b>does not impact robustness</b> as such (c).</li> -->
           <li>Efforts to improve OV-OD robustness should <b>prioritize the vision backbone and feature learning</b>, rather than relying on caption richness, prompt tuning, or linguistic augmentation</li>
         </ul>
       </div>
@@ -628,13 +629,24 @@
       <div class="column is-four-fifths">
         <!-- <h2 class="title is-3">Validating Model Design (TK0 &amp; NN) on Real-World Datasets  🔧</h2> -->
         <div class="content has-text-justified">
-          <p>Our model-based and transformer-level analyses above highlight three key design principles: (1) the <b>vision backbone</b> is the primary determinant of robustness, (2) <b>shallow layers</b> are most adversely affected by noise, and (3) <b>cross-exchanging information</b> across backbone layers improves feature overlap across severities. We validate these insights with two lightweight modules added on top of a frozen GLIP-T trained on BDD-100K.</p>
+          <p>Our model-based and transformer-level analyses above highlight four key design principles: 
+            (1) <b>Vision backbone</b> is the primary determinant of robustness, 
+            (2) <b>Shallow layers</b> are most adversely affected by noise, 
+            (3) <b>Cross-exchanging information across backbone layers</b> improves feature overlap across severities. 
+            (4) <b>Language Features minimal impact</b> on visual robustness (need not be trained)
+            We validate these insights via two lightweight modules added on top of a frozen GLIP-T trained on BDD-100K.</p>
           <ul>
-            <li><b>TK0 (Trainable Spatial Tokens):</b> We extend LR-TK0 (Pathak et al., 2025), originally designed for low-resolution image classification, to hierarchical vision transformers (Swin) for object detection. We drop the expensive teacher-student distillation and retain only the cost-efficient trainable tokens, applied solely to the visual backbone while keeping the entire OV-OD frozen.
-            At every layer (especially shallow), we insert a fixed 32×32 set of trainable spatial tokens, interpolated to match the layer's spatial resolution. This enables (i) <b>flexible hierarchy</b>, adapting to varying H×W across layers, and (ii) <b>lower overhead</b> (+5.7%) compared to the fixed-token design (+22.5%) for a 600×600 Swin-T input.
+            <li><b>TK0 (Trainable Spatial Tokens):</b> We extend LR-TK0 (Pathak et al., 2025), to hierarchical vision transformers (Swin) for object detection. We apply the cost-efficient trainable tokens to the visual backbone while keeping the entire OV-OD frozen.
+            At every layer (especially shallow), we insert a fixed 32 × 32 set of trainable spatial tokens, interpolated to match the layer's spatial resolution. This enables (i) <strong>flexible hierarchy</strong>, adapting to varying H × W across layers, and (ii) <strong>lower overhead</strong> (+5.7%) compared to the fixed-token design (+22.5%) for a 600 × 600 Swin-T input.
             </li>
-
+            <br>
             <li><b>NN (Cross-Layer Non-Local Block):</b> A simple trainable non-local block, implemented as a single-head self-attention module, where Query/Key/Value are formed by concatenating spatial tokens from <i>all</i> backbone layers. This enables tokens to share spatial information across layers — mirroring the role of the fusion transformer with far fewer parameters.</li>
+            
+              <img src="static/images/NN.jpg" alt="NN approach" style="max-width: 100%; height: auto;">
+              <div class="figure-caption">
+                <strong>Non-Local Block:</strong> Cross-Layer feature exchange across shallow and deeper layers..
+              </div>
+              <br>
 
             <li><b>NN &amp; TK0 (Combined):</b> Combining both insights yields robustness comparable to end-to-end fine-tuning, while using only <b>2.41M trainable parameters — 96× fewer</b> than E2E. It even surpasses E2E and Fuse baselines on DAWN and Foggy Cityscapes.</li>
           </ul>
@@ -658,16 +670,19 @@
     </div>
   </div>
 </section>
+
 <section class="section hero">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Driving Datasets 🚗</h2>
-        <div class="content has-text-justified">
+    <div class="columns is-centered">
+      <!-- <div class="column is-four-fifths"> -->
+        <div class="column">
+        <h2 class="title is-3 has-text-centered">Driving Datasets 🚗</h2>
+        <div class="content">
+        <!-- <div class="content has-text-justified"> -->
           <p>BDD-100K trained GLIP-T zero-shot evaluation on DAWN, Foggy Cityscapes (Fog City), Virtual KITTI 2, and COCO. <b>E2E</b> and <b>Fuse</b> are training baselines (training pretrained weights). <b>PC</b>=Partly Cloudy; <b>O</b>=Overcast; <b>S</b>=Snow; <b>R</b>=Rain; <b>F</b>=Fog; <b>Sa</b>=Sand; <b>All</b>=Overall across all categories. The second row per model shows <span style="color: #1a7f37;">↑</span>/<span style="color: #cf222e;">↓</span> change relative to vanilla zero-shot.</p>
           <!-- <div class="figure-grid4" style="gap: 80px; margin-top: -1px"> -->
             <!-- <div class="figure-item"> -->
-              <table class="ablation-table" style="width: 80%; border-collapse: collapse; margin: 0rem 0; font-size: 0.9rem; border-bottom: 1px solid rgba(0, 0, 0, 0.13);">
+              <table class="ablation-table" style="width: 100%; border-collapse: collapse; margin: 0rem 0; font-size: 0.9rem; border-bottom: 1px solid rgba(0, 0, 0, 0.13); text-align: center;">
                 <thead>
                   <tr>
                     <th rowspan="2">Model</th>
@@ -782,6 +797,63 @@
     </div>
   </div>
 </section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <!-- <div class="column is-four-fifths"> -->
+        <div class="column">
+        <h2 class="title is-3 has-text-centered">Real World Datasets</h2>
+        <div class="content">
+        <!-- <div class="content has-text-justified"> -->
+          <p>X (Train) → Y (eval). WiderFace has blurry faces of people; UAVDT & VisDRONE are drone-captured satellite images of streets.</p>
+          <!-- <div class="figure-grid4" style="gap: 80px; margin-top: -1px"> -->
+            <!-- <div class="figure-item"> -->
+              <table class="ablation-table" style="width: 100%; border-collapse: collapse; margin: 0rem 0; font-size: 0.9rem; border-bottom: 1px solid rgba(0, 0, 0, 0.13); text-align: center;">
+                <thead>
+                  <tr>
+                    <th rowspan="2">Model</th>
+                    <th rowspan="2"># of Parameters (trainable)</th>
+                    <th colspan="2">Flickr30k →WiderFace</th>
+                    <th colspan="2">UAVDT → VisDRONE</th>
+                  </tr>
+                  <tr>
+                    <th>AP ↑ </th><th>AP-50 ↑ </th>
+                    <th>AP ↑ </th><th>AP-50 ↑ </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Zero-shot</td>
+                    <td> - </td><td>11.98</td> <td>26.49</td> <td>20.44</td><td>27.09</td>
+                  </tr>
+                  
+
+                  <tr>
+                    <td>E2E</td>
+                    <td> 231.76 </td><td>10.86</td> <td>24.69</td> <td>18.68</td><td>30.56</td>     
+                  </tr>
+
+                  <tr>
+                    <td>Fuse</td>
+                    <td> 91.85 </td><td>10.55</td> <td>24.92</td> <td>20.07</td><td>29.89</td>     
+                  </tr>
+                  
+                  <tr>
+                    <td>NN &amp; TK0</td>
+                    <td> 2.41 </td><td>13.23</td> <td>28.71</td> <td>19.34</td><td>30.97</td>     
+                  </tr>
+                </tbody>
+              </table>
+            <!-- </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- End image carousel -->
 
 
