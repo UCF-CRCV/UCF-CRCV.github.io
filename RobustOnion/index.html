@@ -73,7 +73,7 @@
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <span class="author-block"><a href="https://ppriyank.github.io/" target="_blank">Priyank Pathak*</a><sup>1</sup>,</span>
-                <span class="author-block"><a href="https://mukil07.github.io/ " target="_blank">Mukilan Karuppasamy*</a><sup>2</sup>,</span>
+                <span class="author-block"><a href="https://mukil07.github.io/ " target="_blank">Mukilan Karuppasamy*</a><sup>1</sup>,</span>
                 <span class="author-block"><a href="https://www.sochastic.me/" target="_blank">Aaditya Baranwal</a><sup>1</sup>,</span>
                 <span class="author-block"><a href="https://mse.ucf.edu/person/shrutivyas/" target="_blank">Shruti Vyas</a><sup>1</sup>,</span>
                 <span class="author-block"><a href="https://scholar.google.com/citations?user=D_JvEcwAAAAJ&hl=en" target="_blank">Yogesh S Rawat</a><sup>1</sup></span>
@@ -81,8 +81,7 @@
             </div>
                   
                   <div class="is-size-5 publication-authors">                
-                    <span class="author-block"><sup>1</sup>University of Central Florida,</span>
-                    <span class="author-block"><sup>2</sup>NIT Trichy,</span>
+                    <span class="author-block"><sup>1</sup>University of Central Florida</span>
                     <br>
                     <span class="author-block"><sup>*</sup><i>Equal Contribution</i></span>
                     <br>
@@ -222,7 +221,7 @@
               </button>
             </div>
             <caption> Assuming random accuracy to be 0, we apply WAR metrics (alpha=60, Pathak et al., 2025) to nullify abnormally high robustness score from models like <strong>FIBER-B</strong>, which have a clean accuracy ≈ random. <b>Random predictions remain random after noise</b>, resulting in minimal drop, giving abnormally high robustness score.
-              Models ranked by average WAR robustness metrics across Pixelation, Motion Blur, and Turbulence perturbation. Higher the Intensity of color, greater is the robusntess [0-1] against the respective noises.</caption>
+              Models ranked by average WAR robustness metrics across Pixelation, Motion Blur, and Turbulence perturbation. Higher the Intensity of color, greater is the robustness [0-1] against the respective noises.</caption>
           </table>
         </div>
       </div>
@@ -254,13 +253,12 @@
         <h2 class="title is-3">Abstract 📖</h2>
         <div class="content has-text-justified">
           <p>
-            The impact of real-world noise on <em>Open Vocabulary Object Detectors (OV-ODs)</em> is constrained by their architectural complexity and the scarcity of noise-annotated datasets. 
-            Our empirical analysis, <u><b>Robust Onion</b></u>, uses controlled synthetic visual degradations to mirror feature collapse of real-world noises and systematically peel apart <b>(open the black box)</b> OV-OD components to assess their robustness. 
-            Our findings include: 
-            i) Similar vision backbones show comparable robustness, driven by identical feature collapse at similar layers. 
-            ii) Pretraining, architectural nuances, and captions contribute little to robustness. 
-            iii) Robustness relies strongly on the image domain rather than on annotations, explaining the similar impact of COCO and LVIS on robustness (same images, different annotations), and iv) how datasets like ODinW-13, with large, isolated objects, can give a misleading impression of high robustness. 
-            These insights point to potential research on cross-layer feature exchange and continual learning strategies to improve robustness efficiently. Our findings highlight critical directions for designing robust OV-ODs under challenging visual degradations.
+            The impact of real-world noise on Open Vocabulary Object Detectors (OV-ODs) remains poorly understood due to their architectural complexity.
+            We present our comprehensive analysis Robust Onion, an empirical study that uses controlled
+            synthetic visual degradations to peel OV-ODs layer-by-layer, revealing how, why, and where robustness degrades, systematically analyzing feature collapse.
+            Our findings reveal that models with similar vision backbones exhibit comparable robustness, driven by similar feature collapse at similar layers, while factors such as pretraining strategy, architectural nuances, and caption supervision contribute little. Robustness is primarily governed by the image domain rather than annotations, explaining the similar robustness impact on COCO and LVIS, and why datasets like ODinW-13 can give an inflated impression of robustness due to large, isolated objects.
+            Finally, we validate our insights by improving robustness on real-world BDD-100K and other autonomous driving datasets via our NN & TK0 approach, using 96× fewer trainable parameters than end-to-end training,
+            while also explaining reported robustness observations from prior works.
           </p>
         </div>
       </div>
@@ -277,7 +275,7 @@
         <h2 class="title is-3">Setup 🔨</h2>
         <div class="content has-text-justified">
           <img src="static/images/basic.jpg" alt="Architecture">
-          <div class="figure-caption"> <b>Analysis of VLM architecture towards robustness:</b>  The detailed analysis of VLM architecture layer by layer (peeling layers) to understand the impact of real-world noise on object detection performance. In section 4.1 & 4.2, we analyze the vision features collapsed at different layers, size/architecture of vision backbone, and the effect of fusion. In section 4.3, we analyse the impact of evaluation datasets on robustness, and evaluate what attribute of image/annotation contribute to robustness. Further, the impact of language modality on robustness is evaluated in section 4.4. Image modified from GLIP.</div>
+          <div class="figure-caption"> <b>Analysis of VLM architecture towards robustness:</b> The detailed analysis of VLM architecture layer by layer (peeling layers) to understand the impact of real-world noise on object detection performance. (1) <i>WHERE: Model-Based Analysis</i> examines overall detector size, backbone, pretraining, and fine-tuning. (2) <i>WHY: Insight into Transformers</i> peels the backbone, enhancer, and fusion to localize feature collapse layer-by-layer. (3) <i>WHAT: Robustness as a function of Dataset</i> studies image-domain factors — object size, count, occlusion, and class. (4) <i>WHERE: Captions & Prompt Engineering</i> evaluates caption expressiveness, prompt rewording, and superclass grouping. Image modified from GLIP.</div>
         </div>
         <br>
         <div class="container has-text-centered">
@@ -318,11 +316,26 @@
 </section>
  
 
-<!-- Sec. 4.1 MODEL-BASED ANALYSIS -->
+<!-- ANALYSIS - PARENT HEADER -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Analysis 🧅</h2>
+        <div class="figure-caption">
+          <b>Peeling the VLM layer by layer — four lenses to localize <i>where</i>, <i>why</i>, and <i>what</i> drives robustness.</b>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 1. MODEL-BASED ANALYSIS -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Sec. 4.1 Overall Models 🥸</h2>
+      <h2 class="title is-3">1. WHERE: Model-Based Analysis 🥸</h2>
       <p style="display: flex; align-items: center; gap: 12px;">
         <span style="font-size: 40px; line-height: 1;">🔬</span>
         <span style="font-size: 20px;"><b>Click on the figures to enlarge</b></span>
@@ -375,7 +388,7 @@
               </div>
             </div>
             <div class="figure-caption">
-              <b>(d) No clear correlation of Finetuning with Robusntess </b> Region CLIP improves, FIBER-B suffers.
+              <b>(d) No clear correlation of Finetuning with Robustness </b> Region CLIP improves, FIBER-B suffers.
             </div>
           </div>
         </div>
@@ -384,9 +397,9 @@
       <div class="content has-text-justified">
         <ul>
           <li>Model size positively correlates with robustness (a), with <strong> backbone being the deciding factor</strong>. 
-          <li><strong>Similar backbones has similar robustness (b)</strong>, other bells and whistes like different architectural design, neck, vision-text fusion network, different losses and pretraining strategies / data hardly playing any major role. </li> General overall trend is  ResNet < Swin-T (12 blocks, 27M) < Swin-B (12 blocks, 87M) ≤ Swin-L (24 blocks 195M) ≃
+          <li><strong>Similar backbones have similar robustness (b)</strong>, other bells and whistles like different architectural design, neck, vision-text fusion network, different losses and pretraining strategies / data hardly playing any major role. </li> General overall trend is  ResNet < Swin-T (12 blocks, 27M) < Swin-B (12 blocks, 87M) ≤ Swin-L (24 blocks 195M) ≃
 EVA-02 (24 blocks 303M).
-          <li><strong>Robustness is not simply learned from more data (c)</strong>. Models trained on very different amounts of data can have similar robustness. Hence robsutness technique should emphasize on <strong>noise-robust training, without relying on pretraining and fine-tuning.</strong> </li> 
+          <li><strong>Robustness is not simply learned from more data (c)</strong>. Models trained on very different amounts of data can have similar robustness. Hence robustness techniques should emphasize <strong>noise-robust training, without relying on pretraining and fine-tuning.</strong> </li>
           <li><strong>Finetuning shows no clear correlation with robustness</strong> while it helps RegionCLIP, it hurts FIBER-B.</li>
           <li> Swin-B (87 M) can be an amazing alternative to EVA-02 (303 M) because of their similar robustness. </li>
           <li> COCO and LVIS (same images, different annotations) imparts similar robustness, i.e. <strong>domain of images is more important than annotation.</strong> </li>
@@ -398,11 +411,11 @@ EVA-02 (24 blocks 303M).
 </section>
 
 
-<!-- Sec. 4.2 DEEPER INSIGHT INTO TRANSFORMERS -->
+<!-- 2. DEEPER INSIGHT INTO TRANSFORMERS -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Sec. 4.2 Insight into Model Depth & Architecture 🤯</h2>
+      <h2 class="title is-3">2. WHY: Insight into Transformers (GLIP, MM-GDINO & GLEE) 🤯</h2>
       <p style="display: flex; align-items: center; gap: 12px;">
         <span style="font-size: 40px; line-height: 1;">🔬</span>
         <span style="font-size: 20px;"><b>Click on the figures to enlarge</b></span>
@@ -456,11 +469,11 @@ EVA-02 (24 blocks 303M).
   </div>
 </section>
 
-<!-- Sec. 4.3 Robustness because of input image? -->
+<!-- 3. Robustness because of input image? -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Sec. 4.3 Robustness because of input image? 😨</h2>
+      <h2 class="title is-3">3. WHAT: Robustness as a function of Dataset 😨</h2>
       <p style="display: flex; align-items: center; gap: 12px;">
         <span style="font-size: 40px; line-height: 1;">🔬</span>
         <span style="font-size: 20px;"><b>Click on the figures to enlarge</b></span>
@@ -511,9 +524,9 @@ EVA-02 (24 blocks 303M).
         <ul>
           <li><strong>Larger objects (≥ 96 × 96 size) are significantly more robust to noise</strong>.</li>
           <li> <strong>All detectors are highly robust when there are only a few objects to be detected (≤ 3) (a)</strong>. As the number of objects/images goes above 3, robustness starts to see a drop.</li>
-          <li>Datasets like ODinW-13, majorly dominated by singular and large objects is singificantly more robust than LVIS & COCO, which have higher proportion of smaller and more number of objects on an average.</li>
+          <li>Datasets like ODinW-13, majorly dominated by singular and large objects, are significantly more robust than LVIS & COCO, which have a higher proportion of smaller objects and more objects on average.</li>
           <li>COCO and LVIS exhibit nearly identical robustness despite vastly different label spaces, because they <strong>share the same underlying images (b)</strong> </li>
-          <li> Class-wise robustness <strong>correlates moderately with average object size</strong>, but shows <strong>almost no correlation with class frequency</strong> (c).  This inturn partially explains how LVIS (long tail distribution) has similar robustness to COCO. </li>
+          <li> Class-wise robustness <strong>correlates moderately with average object size</strong>, but shows <strong>almost no correlation with class frequency</strong> (c). This in turn partially explains why LVIS (long-tail distribution) has similar robustness to COCO. </li>
         </ul>
       </div>
       </div>
@@ -521,11 +534,11 @@ EVA-02 (24 blocks 303M).
   </div>
 </section>
 
-<!-- Sec. 4.4 Role of Language -->
+<!-- 4. Role of Language -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Sec. 4.4 Role of Language 🤔</h2>
+      <h2 class="title is-3">4. WHERE: Expressiveness of Captions & Prompt Engineering 🤔</h2>
       <p style="display: flex; align-items: center; gap: 12px;">
         <span style="font-size: 40px; line-height: 1;">🔬</span>
         <span style="font-size: 20px;"><b>Click on the figures to enlarge</b></span>
@@ -575,7 +588,7 @@ EVA-02 (24 blocks 303M).
         <div class="content has-text-justified">
         <ul>
           <li>Caption expressiveness during training has <strong>minimal impact on robustness</strong>, as models fine-tuned on simple (RefCOCO), appearance-based (RefCOCO+), or highly descriptive captions (RefCOCOg) show <strong>nearly identical robustness</strong> under noise. Indicating that <strong>robustness depends fundamentally on visual features, not semantic</strong> (a).</li>
-          <li>Injecting perturbation context into test prompts (captions) <strong>does not meaningfully impact robustness</strong>, showing that <strong>language cannot compensate for corrupted visual representations</strong> bacause of noise (b).</li>
+          <li>Injecting perturbation context into test prompts (captions) <strong>does not meaningfully impact robustness</strong>, showing that <strong>language cannot compensate for corrupted visual representations</strong> caused by noise (b).</li>
           <li>Rewording class labels or grouping classes into supercategories <strong>does not impact robustness</strong> as such (c).</li>
           <li>Efforts to improve OV-OD robustness should <strong>prioritize the vision backbone and feature learning</strong>, rather than relying on caption richness, prompt tuning, or linguistic augmentation</li>
         </ul>
@@ -593,28 +606,19 @@ EVA-02 (24 blocks 303M).
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Emperical verification of Analysis <br> LRTKO+ & LRTKO++ </h2>
+        <h2 class="title is-3">Validating Model Design (TK0 &amp; NN) on Real-World Datasets  🔧</h2>
         <div class="content has-text-justified">
+          <p>Our model-based and transformer-level analyses above highlight three key design principles: (1) the <b>vision backbone</b> is the primary determinant of robustness, (2) <b>shallow layers</b> are most adversely affected by noise, and (3) <b>cross-exchanging information</b> across backbone layers improves feature overlap across severities. We validate these insights with two lightweight modules added on top of a frozen GLIP-T trained on BDD-100K.</p>
           <ul>
-            <li><b>LRTKO+:</b> We extend LR-TK0 (Pathak et al., 2025), originally designed for low-resolution image classification, to hierarchical vision transformers (e.g., Swin) for object detection.
+            <li><b>TK0 (Trainable Spatial Tokens):</b> We extend LR-TK0 (Pathak et al., 2025), originally designed for low-resolution image classification, to hierarchical vision transformers (Swin) for object detection. We drop the expensive teacher-student distillation and retain only the cost-efficient trainable tokens, applied solely to the visual backbone while keeping the entire OV-OD frozen.
+            At every layer (especially shallow), we insert a fixed 32×32 set of trainable spatial tokens, interpolated to match the layer's spatial resolution. This enables (i) <b>flexible hierarchy</b>, adapting to varying H×W across layers, and (ii) <b>lower overhead</b> (+5.7%) compared to the fixed-token design (+22.5%) for a 600×600 Swin-T input.
             </li>
-            At every layer (especially shallow), we insert 32 × 32 trainable spatial tokens interpolated to match the layer’s spatial resolution. This allows Flexible hierarchy (object detectors have a variable spatial resolution) and lower parameter overhead (+5.7%) compared to matching the entire spatial resolution (+22.5%).
 
-            <li><b>LRTKO++:</b> On top of LR-TK0+, we introduce a lightweight continual learning strategy to simulate real-world degradations to improve robustness. Unlike distillation (which requires two passes for teacher & student), continual learning has no additional cost (single forward pass)</li>
-          
+            <li><b>NN (Cross-Layer Non-Local Block):</b> A simple trainable non-local block, implemented as a single-head self-attention module, where Query/Key/Value are formed by concatenating spatial tokens from <i>all</i> backbone layers. This enables tokens to share spatial information across layers — mirroring the role of the fusion transformer with far fewer parameters.</li>
+
+            <li><b>NN &amp; TK0 (Combined):</b> Combining both insights yields robustness comparable to end-to-end fine-tuning, while using only <b>2.41M trainable parameters — 96× fewer</b> than E2E. It even surpasses E2E and Fuse baselines on DAWN and Foggy Cityscapes.</li>
           </ul>
-          
-          <p><b>Curriculum-Based Pixelation Strategy:</b></p>
-          <ul>
-            <li>
-              <b>Stage 1 (Epochs 1 to T1, T1 = 10):</b>
-              <br>Training starts with clean images. Pixelation is gradually introduced inside ground-truth bounding boxes with linearly increasing probability. This helps the model learn robust foreground object representations against clean backgrounds.
-            </li>
-            <li>
-              <b>Stage 2 (After T1):</b>
-              <br>Pixelation is progressively applied to regions outside ground-truth boxes, while continuing to pixelate foreground objects. This simulates realistic degradation in both foreground and background regions.
-            </li>
-          </ul>
+          <p><b>Setup:</b> GLIP-T is trained on BDD-100K and zero-shot evaluated on DAWN, Foggy Cityscapes, Virtual KITTI 2, and COCO (to monitor preservation of the original VLM zero-shot ability). Baselines: <b>E2E</b> (full end-to-end fine-tuning) and <b>Fuse</b> (only the fusion transformer is trained).</p>
           </div>
       </div>
     </div>
@@ -623,100 +627,15 @@ EVA-02 (24 blocks 303M).
 
 
 
-<section class="section hero">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Validation 😌</h2>
-        <div class="content has-text-justified">
-          <div class="figure-grid4" style="gap: 80px; margin-top: -1px">
-            <div class="figure-item">
-              <table class="ablation-table" style="width: 120%">
-                <thead>
-                  <tr>
-                    <th class="group-sep" rowspan="2">Distortion on <br> LR-TK0+</th>
-                    <th class="group-sep" colspan="2">COCO</th>
-                    <th class="group-sep" colspan="2">ODinW-13</th>
-                  </tr>
-                  <tr>
-                    <th>mAP</th><th class="group-sep" >RR</th>
-                    <th>avg AP</th><th class="group-sep" >RR</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="group-sep">Uniform</td>
-                    <td>27.81</td><td class="group-sep">0.60</td>
-                    <td>37.78</td><td class="group-sep" >0.90</td>
-                  </tr>
-                  <tr>
-                    <td class="group-sep">Background</td>
-                    <td>27.72</td><td class="group-sep" >0.59</td>
-                    <td>36.84</td><td class="group-sep" >0.88</td>
-                  </tr>
-                  <tr>
-                    <td class="group-sep">Random</td>     
-                    <td>27.35</td><td class="group-sep">0.59</td>
-                    <td>36.64</td><td class="group-sep">0.87</td>
-                  </tr>
-                  <tr>
-                    <td class="group-sep">GT boxes (LR-TK0++)</td>     
-                    <td>28.37</td><td class="group-sep">0.61</td>
-                    <td>38.21</td><td class="group-sep">0.91</td>
-                  </tr>
-                </tbody>
-                <caption>
-                  <b>Ablation of Continual Learning</b> 
-                </caption>
-              </table>
-            </div>
-            <div class="figure-item">
-              <table class="ablation-table" style="width: 110%;">
-                <caption>
-                  <b>Detection Results (mAP)</b>: GLIP-T Results on COCO & RealWorld Wider face (Yang et al., 2016). LR-TK0+ is modified LR-TK0 for hierarchical transformers
-                </caption>
-                <thead>
-                  <tr>
-                    <th class="group-sep" rowspan="2">Model <br>GLIP-T [5]</th>
-                    <th class="group-sep" rowspan="2">#<br>Params</th>
-                    <th class="group-sep" colspan="3">COCO (Pixelation)</th>
-                    <th class="group-sep" colspan="2">Wider face</th>
-                  </tr>
-                  <tr>
-                    <th>Sev 1</th><th>Sev 2</th><th class="group-sep" >Sev 3</th>
-                    <th>AP</th><th class="group-sep" >AR50</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Zero-shot</td><td>27.5 M</td>
-                    <td>46.0</td><td>42.0</td><td>26.2</td><td>12.57</td><td>26.00</td>
-                  </tr>
-                  <tr>
-                    <td>LR-TK0+</td><td>29.1 M</td>
-                    <td>44.5</td><td>41.4</td><td>28.2</td><td>13.32</td><td>29.88</td>
-                  </tr>
-                  <tr>
-                    <td>LR-TK0++</td><td>29.1 M</td>
-                    <td>45.5</td><td>41.7</td><td>28.4</td><td>13.99</td><td>29.88</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <!-- End image carousel -->
 
 <section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Validation 😌</h2>
+        <h2 class="title is-3">Real-World Validation on Driving Datasets 🚗</h2>
         <div class="content has-text-justified">
+          <p>BDD-100K trained GLIP-T zero-shot evaluation on DAWN, Foggy Cityscapes (Fog City), Virtual KITTI 2, and COCO. <b>E2E</b> and <b>Fuse</b> are training baselines (training pretrained weights). <b>PC</b>=Partly Cloudy; <b>O</b>=Overcast; <b>S</b>=Snow; <b>R</b>=Rain; <b>F</b>=Fog; <b>Sa</b>=Sand; <b>All</b>=Overall across all categories. The second row per model shows <span style="color: #1a7f37;">↑</span>/<span style="color: #cf222e;">↓</span> change relative to vanilla zero-shot.</p>
           <!-- <div class="figure-grid4" style="gap: 80px; margin-top: -1px"> -->
             <!-- <div class="figure-item"> -->
               <table class="ablation-table" style="width: 80%; border-collapse: collapse; margin: 0rem 0; font-size: 0.9rem; border-bottom: 1px solid rgba(0, 0, 0, 0.13);">
@@ -755,11 +674,11 @@ EVA-02 (24 blocks 303M).
                     <td>3.0</td>
                   </tr>
                   <tr>
-                    <td>27.9</td><td>29.0</td><td>29.3</td><td>22.9</td><td>30.0</td><td>35.0</td>
-                    <td>-1.0</td><td>-4.1</td><td>0.0</td><td>-4.6</td><td>2.2</td>
-                    <td>5.5</td>
-                    <td>1.1</td><td>0.8</td><td>1.1</td><td>10.7</td>
-                    <td>-43.6</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.79);">27.9</td><td style="background-color: rgba(76, 175, 80, 0.80);">29.0</td><td style="background-color: rgba(76, 175, 80, 0.81);">29.3</td><td style="background-color: rgba(76, 175, 80, 0.71);">22.9</td><td style="background-color: rgba(76, 175, 80, 0.82);">30.0</td><td style="background-color: rgba(76, 175, 80, 0.88);">35.0</td>
+                    <td style="background-color: rgba(239, 83, 80, 0.15);">-1.0</td><td style="background-color: rgba(239, 83, 80, 0.30);">-4.1</td><td>0.0</td><td style="background-color: rgba(239, 83, 80, 0.32);">-4.6</td><td style="background-color: rgba(76, 175, 80, 0.22);">2.2</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.35);">5.5</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.16);">1.1</td><td style="background-color: rgba(76, 175, 80, 0.13);">0.8</td><td style="background-color: rgba(76, 175, 80, 0.16);">1.1</td><td style="background-color: rgba(76, 175, 80, 0.49);">10.7</td>
+                    <td style="background-color: rgba(239, 83, 80, 0.98);">-43.6</td>
                   </tr>
 
                   <tr>
@@ -771,11 +690,11 @@ EVA-02 (24 blocks 303M).
                     <td>3.8</td>
                   </tr>
                   <tr>
-                    <td>26.0</td><td>28.4</td><td>28.6</td><td>21.1</td><td>29.2</td><td>33.7</td>
-                    <td>-2.6</td><td>-4.6</td><td>-2.2</td><td>-7.3</td><td>1.8</td>
-                    <td>5.2</td>
-                    <td>1.6</td><td>1.1</td><td>1.2</td><td>8.9</td>
-                    <td>-42.8</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.76);">26.0</td><td style="background-color: rgba(76, 175, 80, 0.79);">28.4</td><td style="background-color: rgba(76, 175, 80, 0.80);">28.6</td><td style="background-color: rgba(76, 175, 80, 0.68);">21.1</td><td style="background-color: rgba(76, 175, 80, 0.81);">29.2</td><td style="background-color: rgba(76, 175, 80, 0.87);">33.7</td>
+                    <td style="background-color: rgba(239, 83, 80, 0.24);">-2.6</td><td style="background-color: rgba(239, 83, 80, 0.32);">-4.6</td><td style="background-color: rgba(239, 83, 80, 0.22);">-2.2</td><td style="background-color: rgba(239, 83, 80, 0.40);">-7.3</td><td style="background-color: rgba(76, 175, 80, 0.20);">1.8</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.34);">5.2</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.19);">1.6</td><td style="background-color: rgba(76, 175, 80, 0.16);">1.1</td><td style="background-color: rgba(76, 175, 80, 0.16);">1.2</td><td style="background-color: rgba(76, 175, 80, 0.44);">8.9</td>
+                    <td style="background-color: rgba(239, 83, 80, 0.97);">-42.8</td>
                   </tr>
 
                   <tr>
@@ -787,11 +706,11 @@ EVA-02 (24 blocks 303M).
                     <td>43.2</td>
                   </tr>
                   <tr>
-                    <td>18.1</td><td>19.3</td><td>19.3</td><td>12.6</td><td>21.0</td><td>13.7</td>
-                    <td>2.7</td><td>1.8</td><td>2.1</td><td>0.3</td><td>-1.3</td>
-                    <td>4.1</td>
-                    <td>1.3</td><td>1.0</td><td>1.1</td><td>5.2</td>
-                    <td>-3.4</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.63);">18.1</td><td style="background-color: rgba(76, 175, 80, 0.66);">19.3</td><td style="background-color: rgba(76, 175, 80, 0.66);">19.3</td><td style="background-color: rgba(76, 175, 80, 0.53);">12.6</td><td style="background-color: rgba(76, 175, 80, 0.68);">21.0</td><td style="background-color: rgba(76, 175, 80, 0.55);">13.7</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.25);">2.7</td><td style="background-color: rgba(76, 175, 80, 0.20);">1.8</td><td style="background-color: rgba(76, 175, 80, 0.22);">2.1</td><td style="background-color: rgba(76, 175, 80, 0.08);">0.3</td><td style="background-color: rgba(239, 83, 80, 0.17);">-1.3</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.30);">4.1</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.17);">1.3</td><td style="background-color: rgba(76, 175, 80, 0.15);">1.0</td><td style="background-color: rgba(76, 175, 80, 0.16);">1.1</td><td style="background-color: rgba(76, 175, 80, 0.34);">5.2</td>
+                    <td style="background-color: rgba(239, 83, 80, 0.27);">-3.4</td>
                   </tr>
 
                   <tr>
@@ -803,11 +722,11 @@ EVA-02 (24 blocks 303M).
                     <td>22.1</td>
                   </tr>
                   <tr>
-                    <td>18.4</td><td>20.3</td><td>19.9</td><td>16.4</td><td>21.1</td><td>13.6</td>
-                    <td>0.7</td><td>1.1</td><td>-0.2</td><td>-0.1</td><td>-0.4</td>
-                    <td>4.4</td>
-                    <td>1.3</td><td>0.8</td><td>0.9</td><td>7.8</td>
-                    <td>-24.5</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.64);">18.4</td><td style="background-color: rgba(76, 175, 80, 0.67);">20.3</td><td style="background-color: rgba(76, 175, 80, 0.66);">19.9</td><td style="background-color: rgba(76, 175, 80, 0.60);">16.4</td><td style="background-color: rgba(76, 175, 80, 0.68);">21.1</td><td style="background-color: rgba(76, 175, 80, 0.55);">13.6</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.12);">0.7</td><td style="background-color: rgba(76, 175, 80, 0.16);">1.1</td><td style="background-color: rgba(239, 83, 80, 0.07);">-0.2</td><td style="background-color: rgba(239, 83, 80, 0.05);">-0.1</td><td style="background-color: rgba(239, 83, 80, 0.09);">-0.4</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.31);">4.4</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.17);">1.3</td><td style="background-color: rgba(76, 175, 80, 0.13);">0.8</td><td style="background-color: rgba(76, 175, 80, 0.14);">0.9</td><td style="background-color: rgba(76, 175, 80, 0.42);">7.8</td>
+                    <td style="background-color: rgba(239, 83, 80, 0.74);">-24.5</td>
                   </tr>
 
                   <tr>
@@ -819,11 +738,11 @@ EVA-02 (24 blocks 303M).
                     <td>33.4</td>
                   </tr>
                   <tr>
-                    <td>23.4</td><td>24.9</td><td>24.4</td><td>18.9</td><td>25.7</td><td>23.8</td>
-                    <td>1.4</td><td>0.8</td><td>1.3</td><td>-0.3</td><td>2.3</td>
-                    <td>6.8</td>
-                    <td>1.7</td><td>1.2</td><td>1.6</td><td>9.0</td>
-                    <td>-13.2</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.72);">23.4</td><td style="background-color: rgba(76, 175, 80, 0.74);">24.9</td><td style="background-color: rgba(76, 175, 80, 0.74);">24.4</td><td style="background-color: rgba(76, 175, 80, 0.65);">18.9</td><td style="background-color: rgba(76, 175, 80, 0.76);">25.7</td><td style="background-color: rgba(76, 175, 80, 0.73);">23.8</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.18);">1.4</td><td style="background-color: rgba(76, 175, 80, 0.13);">0.8</td><td style="background-color: rgba(76, 175, 80, 0.17);">1.3</td><td style="background-color: rgba(239, 83, 80, 0.08);">-0.3</td><td style="background-color: rgba(76, 175, 80, 0.23);">2.3</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.39);">6.8</td>
+                    <td style="background-color: rgba(76, 175, 80, 0.19);">1.7</td><td style="background-color: rgba(76, 175, 80, 0.16);">1.2</td><td style="background-color: rgba(76, 175, 80, 0.19);">1.6</td><td style="background-color: rgba(76, 175, 80, 0.45);">9.0</td>
+                    <td style="background-color: rgba(239, 83, 80, 0.54);">-13.2</td>
                   </tr>
                 </tbody>
               </table>
@@ -850,7 +769,7 @@ EVA-02 (24 blocks 303M).
       url             ={},
       }</code></pre>
     </div>
-</section>
+</section>extend sec 5.126
 <!--End BibTex citation -->
 
 
